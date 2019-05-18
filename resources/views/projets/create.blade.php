@@ -12,14 +12,14 @@
 
            <div class="form-group">
             <label for="">Titre</label>
-            <input type="text" name="titre" placeholder="Exemple : Projet Sonatrach"class="form-control @if($errors->get('titre'))  is-invalid  @endif" value="{{old ('titre')}}">
+            <input type="text" name="titre" placeholder="Exemple : Projet Cesi"class="form-control @if($errors->get('titre'))  is-invalid  @endif" value="{{old ('titre')}}">
 
             @if($errors->get('titre'))
                     @foreach($errors->get('titre') as $message)
                         <li>{{ $message }}</li>
                     @endforeach
                 @endif
-                
+
 
 
 
