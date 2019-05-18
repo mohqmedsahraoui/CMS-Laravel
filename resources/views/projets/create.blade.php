@@ -19,12 +19,7 @@
                         <li>{{ $message }}</li>
                     @endforeach
                 @endif
-
-                //zizou soltan 
-
-
-
-
+                
            </div>
 
             <div class="form-group ">
