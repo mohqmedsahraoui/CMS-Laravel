@@ -21,6 +21,9 @@
 <?php
 echo "Today is " . date("l"). "  " . date("d /m /Y")   . "<br>";
 ?>
+<?php
+echo "Today is " . date("l"). "  " . date("d /m /Y")   . "<br>";
+?>
 </h1>
         
         <h1>La liste des projets</h1>
