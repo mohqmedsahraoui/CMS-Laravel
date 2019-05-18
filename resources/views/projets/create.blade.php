@@ -19,9 +19,9 @@
                         <li>{{ $message }}</li>
                     @endforeach
                 @endif
-                
-           </div>
 
+           </div>
+          
             <div class="form-group ">
             <label for="">Description</label>
             <textarea  name="description" placeholder="Exemple : L'objectif de cette présentation est de ..." class="form-control @if($errors->get('description'))  is-invalid  @endif ">{{old ('description')}}</textarea>
@@ -35,6 +35,10 @@
             </div>
 
             
+            <div class="form-group">
+               <label for="">Image</label>
+               <input class="form-control" type="file" name="image">
+           </div>
 
             <div class="form-group">
             
