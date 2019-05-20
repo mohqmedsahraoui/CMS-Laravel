@@ -17,11 +17,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('projets', 'ProjetController@index');
+
 Route::get('projets/create', 'ProjetController@create');
+
 Route::post('projets', 'ProjetController@store');
+
 Route::get('projets/{id}/edit', 'ProjetController@edit');
+
 Route::put('projets/{id}','ProjetController@update');
+
 Route::delete('projets/{id}', 'ProjetController@destroy');
 
