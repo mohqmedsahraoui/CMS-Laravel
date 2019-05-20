@@ -38,20 +38,41 @@ class ProjetController extends Controller
 
     public function store (cmsRequest $request ) {
 
-       $projet = new Projet ();
 
+      
+       //Instance of objet
+       $projet = new Projet ();
        $photo = new Photo ();
 
+       if($request->hasFile('image')) {
+
+        //Get FileName with Extension
+        $filenameWithExt = $request->file('image')->getClientOriginalName();
+
+        //Get just filename
+        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME); 
+
+        //Get Just Extension
+        $extension = $request->file('image')->getClientOriginalExtension();
+
+        //FileName To Store 
+        $filenameToStore = $filename.'_'.time().'.'.$extension;
+
+        //Upload Image to Public Folder
+         // $path = $request->file('image')->store('public/hamida', $filenameToStore);
+        $path = Storage::putFile('public/hamida' , $request->file($filenameToStore));
+    }
+
+    else {
+        $filenameToStore = 'noimage.jpg';
+    }
+
+
+       //Request DataBase
        $projet->titre = $request->input('titre');
        $projet->description = $request->input('description');
        $projet->user_id = Auth::user()->id;
-      
-
-       if($request->hasFile('photo')) {
-       $photo->source = $request->store('image');
-       }
-
-       
+       $photo->source = $filenameToStore;
 
 
        $projet->save();
