@@ -36,7 +36,7 @@ class ProjetController extends Controller
 
     }
 
-    public function store (cmsRequest $request ) {
+    public function store (cmsRequest $request, $id) {
 
 
       
@@ -66,16 +66,20 @@ class ProjetController extends Controller
         $filenameToStore = 'noimage.jpg';
     }
     //Request DataBase
+
+        $idprojet = Projet::find($id);
     
        $projet->titre = $request->input('titre');
        $projet->description = $request->input('description');
        $projet->user_id = Auth::user()->id;
-       $projet->source = $filenameToStore;
+       $photo->source = $filenameToStore;
+       $photo->projet_id = $idprojet;
 
      
 
 
        $projet->save();
+       $photo->save();
        
 
         session()->flash ('success', 'Le projet a bien été enregsitré');
