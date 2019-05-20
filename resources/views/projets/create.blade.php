@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-        <form action="{{ url('projets')}}" method="post" enctype="multipart/form-data" file="true">
+        <form action="{{ url('projets')}}" method="post" enctype="multipart/form-data" file = "true">
 
         {{ csrf_field() }}
 
