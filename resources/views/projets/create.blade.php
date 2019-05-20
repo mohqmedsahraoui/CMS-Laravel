@@ -36,14 +36,16 @@
 
             
             <div class="form-group">
-               <label for="">Image</label>
-               <input class="form-control" type="file" name="photo">
+               <label for="">photo</label>
+               <input class="form-control" type="file" name="image">
            </div>
 
             <div class="form-group">
             
             <input type="submit" name="présentation" class="form-control btn btn-primary" value=Enregistrer>
             </div>
+
+            
 
 
             
