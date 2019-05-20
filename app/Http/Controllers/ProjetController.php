@@ -40,43 +40,28 @@ class ProjetController extends Controller
 
 
       
-       //Instance of objet
+    //Instance of objet
        $projet = new Projet ();
        $photo = new Photo ();
 
-       if($request->hasFile('image')) {
-
-        //Get FileName with Extension
-        $filenameWithExt = $request->file('image')->getClientOriginalName();
-
-        //Get just filename
-        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME); 
-
-        //Get Just Extension
-        $extension = $request->file('image')->getClientOriginalExtension();
-
-        //FileName To Store 
-        $filenameToStore = $filename.'_'.time().'.'.$extension;
-
-        //Upload Image to Public Folder
-         // $path = $request->file('image')->store('public/hamida', $filenameToStore);
-        $path = Storage::putFile('public/hamida' , $request->file($filenameToStore));
+     
+    if($request->filled('image')) {
+        $projet->source = $request->image->storeAs('photo');
     }
-
-    else {
-        $filenameToStore = 'noimage.jpg';
-    }
-
-
-       //Request DataBase
+else {
+    echo ('ro7 t9wd');
+}
+    //Request DataBase
+    
        $projet->titre = $request->input('titre');
        $projet->description = $request->input('description');
        $projet->user_id = Auth::user()->id;
-       $photo->source = $filenameToStore;
+
+     
 
 
        $projet->save();
-       $photo->save();
+       
 
         session()->flash ('success', 'Le projet a bien été enregsitré');
 
