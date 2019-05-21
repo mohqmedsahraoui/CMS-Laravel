@@ -36,7 +36,7 @@ class ProjetController extends Controller
 
     }
 
-    public function store (cmsRequest $request, $id) {
+    public function store (cmsRequest $request) {
 
 
       
@@ -46,19 +46,19 @@ class ProjetController extends Controller
 
        if($request->hasFile('image')) {
 
-        //Get FileName with Extension
+    //Get FileName with Extension
         $filenameWithExt = $request->file('image')->getClientOriginalName();
 
-        //Get just filename
+    //Get just filename
         $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME); 
 
-        //Get Just Extension
+    //Get Just Extension
         $extension = $request->file('image')->getClientOriginalExtension();
 
-        //FileName To Store 
+    //FileName To Store 
         $filenameToStore = $filename.'_'.time().'.'.$extension;
 
-        //Upload Image to Public Folder
+    //Upload Image to Public Folder
          $path = $request->file('image')->storeAs('this', $filenameToStore);
         
     }
@@ -67,16 +67,13 @@ class ProjetController extends Controller
     }
     //Request DataBase
 
-        $idprojet = Projet::find($id);
+        
     
        $projet->titre = $request->input('titre');
        $projet->description = $request->input('description');
        $projet->user_id = Auth::user()->id;
        $photo->source = $filenameToStore;
-       $photo->projet_id = $idprojet;
-
-     
-
+       $photo->projet_id = $projet->id; 
 
        $projet->save();
        $photo->save();
@@ -85,6 +82,7 @@ class ProjetController extends Controller
         session()->flash ('success', 'Le projet a bien été enregsitré');
 
        return redirect('projets');
+        //return redirect('projets/photo');
 
 
 
@@ -117,4 +115,9 @@ class ProjetController extends Controller
 
             return redirect('projets');
         }
-}
+/*
+        public function photo (){
+            return view('projets.createPhoto');
+        } */ 
+
+    }
