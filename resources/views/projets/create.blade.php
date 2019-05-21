@@ -12,7 +12,7 @@
 
            <div class="form-group">
             <label for="">Titre</label>
-            <input type="text" name="titre" placeholder="Exemple : Projet Cesi"class="form-control @if($errors->get('titre'))  is-invalid  @endif" value="{{old ('titre')}}">
+            <input type="text" name="titre" placeholder="Exemple : Projet Cesi" class="form-control @if($errors->get('titre'))  is-invalid  @endif" value="{{old ('titre')}}">
 
             @if($errors->get('titre'))
                     @foreach($errors->get('titre') as $message)
@@ -35,18 +35,21 @@
                 @endif
 
             </div>
-
-            
             <div class="form-group">
                <label for="">photo</label>
                <input class="form-control" type="file" name="image">
            </div>
+            
+            
+          <!--   <input type="text" class="form-control" id="projet" name="projet_id" value="{{\request('oppo')}}" hidden="hidden"> --> 
 
             <div class="form-group">
             
             <input type="submit" name="présentation" class="form-control btn btn-primary" value=Enregistrer>
             </div>
-
+            <!-- 
+            <a class="btn btn-primary" href="{{ url('projet/photo') }}" role="button">Next</a>  --> 
+           
             
 
 
