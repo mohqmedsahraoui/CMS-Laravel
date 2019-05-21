@@ -8,6 +8,9 @@ use App\Projet;
 use App\Photo;
 use Auth;
 
+use Image;
+
+
 use App\Http\Requests\cmsRequest;
 
 class ProjetController extends Controller
@@ -36,50 +39,27 @@ class ProjetController extends Controller
 
     }
 
-    public function store (cmsRequest $request, $id) {
+    public function store (cmsRequest $request) {
 
 
       
     //Instance of objet
        $projet = new Projet ();
-       $photo = new Photo ();
+    
 
-       if($request->hasFile('image')) {
-
-        //Get FileName with Extension
-        $filenameWithExt = $request->file('image')->getClientOriginalName();
-
-        //Get just filename
-        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME); 
-
-        //Get Just Extension
-        $extension = $request->file('image')->getClientOriginalExtension();
-
-        //FileName To Store 
-        $filenameToStore = $filename.'_'.time().'.'.$extension;
-
-        //Upload Image to Public Folder
-         $path = $request->file('image')->storeAs('this', $filenameToStore);
-        
-    }
-    else {
-        $filenameToStore = 'noimage.jpg';
-    }
-    //Request DataBase
-
-        $idprojet = Projet::find($id);
+       
     
        $projet->titre = $request->input('titre');
        $projet->description = $request->input('description');
        $projet->user_id = Auth::user()->id;
-       $photo->source = $filenameToStore;
-       $photo->projet_id = $idprojet;
+       
+      
 
      
 
 
        $projet->save();
-       $photo->save();
+      
        
 
         session()->flash ('success', 'Le projet a bien été enregsitré');
@@ -118,3 +98,5 @@ class ProjetController extends Controller
             return redirect('projets');
         }
 }
+  
+
