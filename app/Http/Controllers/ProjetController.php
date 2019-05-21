@@ -45,18 +45,19 @@ class ProjetController extends Controller
       
     //Instance of objet
        $projet = new Projet ();
+
     
 
        
+
+    //Request DataBase
+
+        
+
     
        $projet->titre = $request->input('titre');
        $projet->description = $request->input('description');
        $projet->user_id = Auth::user()->id;
-       
-      
-
-     
-
 
        $projet->save();
       
@@ -65,6 +66,7 @@ class ProjetController extends Controller
         session()->flash ('success', 'Le projet a bien été enregsitré');
 
        return redirect('projets');
+        //return redirect('projets/photo');
 
 
 
@@ -97,6 +99,7 @@ class ProjetController extends Controller
 
             return redirect('projets');
         }
+
 }
   
 
