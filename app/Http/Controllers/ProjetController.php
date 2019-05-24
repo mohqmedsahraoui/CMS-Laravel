@@ -65,8 +65,8 @@ class ProjetController extends Controller
 
         session()->flash ('success', 'Le projet a bien été enregsitré');
 
-       return redirect('projets');
-        //return redirect('projets/photo');
+       return redirect('photo');
+        
 
 
 
