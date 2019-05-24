@@ -42,18 +42,28 @@ class FormController extends Controller
 
             foreach($request->file('filename') as $image)
             {
+
+                $form= new Form();
                 $name=$image->getClientOriginalName();
                 $image->move(public_path().'/images/', $name);  
-                $data[] = $name;  
+                $data = $name;
+                $form->filename=$data;
+                $form->save();
             }
          }
 
-         $form= new Form();
-         $form->filename=json_encode($data);
+         
          
         
-        $form->save();
+       
 
         return back()->with('success', 'Your images has been successfully');
     }
+
 }
+
+
+
+
+
+
