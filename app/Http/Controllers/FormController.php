@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Form;
+use App\Projet;
 
 class FormController extends Controller
 {
@@ -26,7 +27,7 @@ class FormController extends Controller
 
 
 
-    public function store(Request $request)
+    public function store(Request $request, $id)
 
     {
 
@@ -42,7 +43,7 @@ class FormController extends Controller
 
             foreach($request->file('filename') as $image)
             {
-
+                $projet = Projet::find($id);
                 $form= new Form();
                 $name=$image->getClientOriginalName();
                 $image->move(public_path().'/images/', $name);  
