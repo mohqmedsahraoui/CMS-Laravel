@@ -27,7 +27,7 @@ class FormController extends Controller
 
 
 
-    public function store(Request $request, $id)
+    public function store(Request $request)
 
     {
 
@@ -43,13 +43,15 @@ class FormController extends Controller
 
             foreach($request->file('filename') as $image)
             {
-                $projet = Projet::find($id);
+                
                 $form= new Form();
                 $name=$image->getClientOriginalName();
                 $image->move(public_path().'/images/', $name);  
                 $data = $name;
                 $form->filename=$data;
+                $form->projet_id = $request->input('projet_id');
                 $form->save();
+                
             }
          }
 
