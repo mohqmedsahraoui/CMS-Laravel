@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\DB;
 use App\Projet;
 use App\Photo;
+use App\Form;
 use Auth;
 
 use Image;
@@ -40,36 +42,23 @@ class ProjetController extends Controller
     }
 
     public function store (cmsRequest $request) {
-
-
-      
+  
     //Instance of objet
        $projet = new Projet ();
-
-    
-
-       
-
     //Request DataBase
-
-        
-
-    
        $projet->titre = $request->input('titre');
        $projet->description = $request->input('description');
        $projet->user_id = Auth::user()->id;
-
        $projet->save();
-      
-       
 
         session()->flash ('success', 'Le projet a bien été enregsitré');
 
-       return redirect('photo');
-        
+   $data = DB::table('projets')->whereRaw('id')->get('id')->last();
+   $data2 = implode("/n", array_flatten($data));
+    
 
-
-
+       return view ('photo', ['data2' => $data2 ]);
+ 
     }
 
     public function edit ($id) {
