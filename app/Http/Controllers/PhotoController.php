@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 use App\Photo;
+
 
 class PhotoController extends Controller
 {
@@ -43,12 +45,14 @@ class PhotoController extends Controller
             foreach($request->file('source') as $image)
             {
 
+
                 $photo= new photo();
                 $name=$image->getClientOriginalName();
                 $image->move(public_path().'/images/', $name);  
                 $data = $name;
                 $photo->source=$data;
                 $photo->save();
+
             }
          }
 

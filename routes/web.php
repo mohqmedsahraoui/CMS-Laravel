@@ -33,8 +33,10 @@ Route::put('projets/{id}','ProjetController@update');
 Route::delete('projets/{id}', 'ProjetController@destroy');
 
 
+
 Route::get('photo','PhotoController@create');
 Route::post('photo','PhotoController@store');
+
 
 
 

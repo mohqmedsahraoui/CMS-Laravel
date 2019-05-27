@@ -42,9 +42,12 @@
           </div>
         </div>
 
-        <button type="submit" class="btn btn-primary" style="margin-top:10px">Submit</button>
+        <input type="number" hidden="hidden" value = "{{$data2}}" name="projet_id" >
 
-  </form>        
+        <button type="submit" class="btn btn-primary" style="margin-top:10px">Submit</button>
+        
+
+  </form>       
   </div>
 
 
