@@ -51,6 +51,7 @@ class PhotoController extends Controller
                 $image->move(public_path().'/images/', $name);  
                 $data = $name;
                 $photo->source=$data;
+                $photo->projet_id = $request->input('projet_id');
                 $photo->save();
 
             }
