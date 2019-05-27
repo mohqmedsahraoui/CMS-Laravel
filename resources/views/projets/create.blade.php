@@ -40,7 +40,7 @@
            
             <div class="form-group">
             
-            <input type="submit" name="présentation" class="form-control btn btn-primary" value=Enregistrer>
+            <input type="submit" name="présentation" class="form-control btn btn-primary" value=Suivant>
             </div>
             <!-- 
             <a class="btn btn-primary" href="{{ url('projet/photo') }}" role="button">Next</a>  --> 
