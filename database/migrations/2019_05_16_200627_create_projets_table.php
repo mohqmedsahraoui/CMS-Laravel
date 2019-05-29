@@ -16,7 +16,9 @@ class CreateProjetsTable extends Migration
         Schema::create('projets', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('titre', 200);
+            $table->text('intro');
             $table->text('description');
+            $table->text('objectif');
             $table->Biginteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
