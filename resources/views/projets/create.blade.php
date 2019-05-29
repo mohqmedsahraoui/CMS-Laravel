@@ -23,6 +23,32 @@
 
 
            </div>
+
+            <div class="form-group ">
+          <label for="">Introduction</label>
+          <textarea  name="intro" placeholder="Exemple : Ce projet est ..." class="form-control @if($errors->get('intro'))  is-invalid  @endif ">{{old ('intro')}}</textarea>
+          
+          @if($errors->get('intro'))
+                  @foreach($errors->get('intro') as $message)
+                      <li>{{ $message }}</li>
+                  @endforeach
+              @endif
+
+          </div>
+
+
+          <div class="form-group ">
+            <label for="">Objectif</label>
+            <textarea  name="objectif" placeholder="Exemple : L'objectif de cette présentation est de ..." class="form-control @if($errors->get('objectif'))  is-invalid  @endif ">{{old ('objectif')}}</textarea>
+            
+            @if($errors->get('objectif'))
+                    @foreach($errors->get('objectif') as $message)
+                        <li>{{ $message }}</li>
+                    @endforeach
+                @endif
+
+            </div>
+
           
             <div class="form-group ">
             <label for="">Description</label>
@@ -35,6 +61,29 @@
                 @endif
 
             </div>
+
+            <div class="dropdown">
+
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+    Dropdown
+
+  </button>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+
+    <button class="dropdown-item" type="button">Maitre A</button>
+
+    <button class="dropdown-item" type="button">Maitre B</button>
+
+    <button class="dropdown-item" type="button">Maitre C</button>
+
+  </div>
+
+</div>
+
+ 
+          
 
 
            
