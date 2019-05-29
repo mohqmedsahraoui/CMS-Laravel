@@ -48,6 +48,9 @@ class ProjetController extends Controller
     //Request DataBase
        $projet->titre = $request->input('titre');
        $projet->description = $request->input('description');
+       $projet->intro = $request->input('intro');
+       $projet->objectif = $request->input('objectif');
+
        $projet->user_id = Auth::user()->id;
        $projet->save();
 
