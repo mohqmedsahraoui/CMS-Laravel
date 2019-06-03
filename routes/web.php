@@ -37,6 +37,12 @@ Route::delete('projets/{id}', 'ProjetController@destroy');
 Route::get('photo','PhotoController@create');
 Route::post('photo','PhotoController@store');
 
+Route::get('/front', function() {
+    return view('front');
+} );
+
+
+
 
 
 
