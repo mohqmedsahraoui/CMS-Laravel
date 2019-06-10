@@ -41,7 +41,7 @@ class PhotoController extends Controller
         
         if($request->hasfile('carousel') && $request->hasfile('presentation'))
          {
-            
+          
 
             foreach($request->file('carousel') as $image)
             {
@@ -72,24 +72,12 @@ class PhotoController extends Controller
             
 
             }
-
-            
-
          }
 
-      
 
-        
-         
-         
-         
+        return back()->with('success', 'Your images has been successfully');
 
-         
-         
-        
        
-         
-         return back()->with('success', 'Your images has been successfully');
     }
 
 }
