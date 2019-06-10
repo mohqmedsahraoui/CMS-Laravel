@@ -2,6 +2,10 @@
 
 @section('content')
 
+<body>
+    
+
+
 
 <div class="container">
     <div class="row">
@@ -60,50 +64,80 @@
                     @endforeach
                 @endif
 
+                
+
+
+
+
+                </div>
+
+
+                <div>
+         
+                
+                <div class="form-group">
+
+                <label for="">Nom</label>
+            <input type="text" class="form-control">
+                    
             </div>
 
-            <div class="dropdown">
+                    
+           
+            <div class="form-group">
+        <select id="list" class="form-control"  onchange="getSelectValue();">
+        <option value="value">Choisir le rôle</option>
+            <option value="Maitre A">Maitre A</option>
+            <option value="Maitre B">Maitre B</option>
+            <option value="Maitre C">Maitre C</option>
+            
+        </select>
+    <script>
+        
+        function getSelectValue()
+        {
+            var selectedValue = document.getElementById("list").value;
+            console.log(selectedValue);
+        }
+        getSelectValue();
 
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    </script>
 
-    Dropdown
 
-  </button>
 
-  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                   
+    
 
-    <button class="dropdown-item" type="button">Maitre A</button>
-
-    <button class="dropdown-item" type="button">Maitre B</button>
-
-    <button class="dropdown-item" type="button">Maitre C</button>
-
-  </div>
+                     
+</div>
 
 </div>
 
- 
-          
-
-
-           
-            <div class="form-group">
-            
-            <input type="submit" name="présentation" class="form-control btn btn-primary" value=Suivant>
+ <input type="submit" name="présentation" class="form-control btn btn-primary" value=Suivant>
             </div>
             <!-- 
             <a class="btn btn-primary" href="{{ url('projet/photo') }}" role="button">Next</a>  --> 
            
             
 
-
+     
+   
             
 
 
         </form>
         </div>
+
+    
+   
+   
+   
+   
     </div>
 </div>
+
+</body>
+
 
 
 
