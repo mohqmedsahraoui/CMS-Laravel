@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7fd018cb6abd8eea4af9635f4429ea427c47786e
 <html lang="en">
 <head>
   <title>Laravel Multiple File Upload Example</title>
@@ -24,6 +28,7 @@
         @endif
 
     <h3 class="jumbotron">Laravel Multiple File Upload</h3>
+<<<<<<< HEAD
 
 
     <div class="carousel">
@@ -35,6 +40,13 @@
 
         <div class="input-group control-group increment" >
           <input type="file" name="carousel[]" class="form-control">
+=======
+<form method="post" action="{{url('projets')}}" enctype="multipart/form-data">
+  {{csrf_field()}}
+
+        <div class="input-group control-group increment" >
+          <input type="file" name="source[]" class="form-control">
+>>>>>>> 7fd018cb6abd8eea4af9635f4429ea427c47786e
           <div class="input-group-btn"> 
             <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Add</button>
           </div>
@@ -48,6 +60,7 @@
           </div>
         </div>
 
+<<<<<<< HEAD
     </div>
 
           <!--ESPAAAAAACCCCCCCCCCCCEEEEE-->
@@ -85,6 +98,11 @@
         
 
   </form>       
+=======
+        <button type="submit" class="btn btn-primary" style="margin-top:10px">Submit</button>
+
+  </form>        
+>>>>>>> 7fd018cb6abd8eea4af9635f4429ea427c47786e
   </div>
 
 
