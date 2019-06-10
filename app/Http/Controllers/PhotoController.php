@@ -32,37 +32,64 @@ class PhotoController extends Controller
 
     {
 
-        $this->validate($request, [
+       /* $this->validate($request, [
 
                 'source' => 'required',
                 'source.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
 
-        ]);
+        ]); */
         
-        if($request->hasfile('source'))
+        if($request->hasfile('carousel') && $request->hasfile('presentation'))
          {
+            
 
-            foreach($request->file('source') as $image)
+            foreach($request->file('carousel') as $image)
             {
 
 
                 $photo= new photo();
                 $name=$image->getClientOriginalName();
-                $image->move(public_path().'/images/', $name);  
+                $image->move(public_path().'/images/carousel', $name);  
                 $data = $name;
-                $photo->source=$data;
+                $photo->carousel=$data;
                 $photo->projet_id = $request->input('projet_id');
                 $photo->save();
 
             }
+
+            
+            foreach($request->file('presentation') as $image2)
+            {
+
+
+                $photo= new photo();
+                $name=$image2->getClientOriginalName();
+                $image2->move(public_path().'/images/presentation', $name);  
+                $data = $name;
+                $photo->presentation=$data;
+                $photo->projet_id = $request->input('projet_id');
+                $photo->save();
+            
+
+            }
+
+            
+
          }
+
+      
+
+        
+         
+         
+         
 
          
          
         
        
-
-        return back()->with('success', 'Your images has been successfully');
+         
+         return back()->with('success', 'Your images has been successfully');
     }
 
 }
