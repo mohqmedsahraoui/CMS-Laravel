@@ -17,9 +17,18 @@ class ParticipantController extends Controller
     }
 
     public function store (cmsRequest $request) {
+
     $participant = new participant ();
     
-    $participant->role = $request -> input('participant');
+    $participant->nom = $request->input('nom');
+    $participant->projet_id = $request->input('projet_id2');
+
+    $participant->save();
+
+    return redirect('projets');
+    
+    
+    
 
    
 
