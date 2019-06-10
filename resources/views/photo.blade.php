@@ -82,7 +82,7 @@
 
         <input type="number" hidden="hidden" value = "{{$data2}}" name="projet_id" >
 
-        <button type="submit" class="btn btn-primary" style="margin-top:10px">Submit</button>
+        <button type="submit" class="btn btn-primary" style="margin-top:10px">Suivant</button>
         
 
   </form>       
