@@ -6,6 +6,7 @@
 
 
 <form method="post" action="{{url('participant')}}" enctype="multipart/form-data">
+{{csrf_field()}}
 
     
 <div>
@@ -22,12 +23,11 @@
              
     
     <div class="form-group">
-        <select id="list" class="form-control"  onchange="getSelectValue();">
+        <select id="list" class="form-control" name="role"  onchange="getSelectValue();">
             <option value="value">Choisir le rôle</option>
             <option value="Maitre A">Maitre A</option>
             <option value="Maitre B">Maitre B</option>
             <option value="Maitre C">Maitre C</option>
-     
         </select>
 
     </div>
@@ -35,7 +35,7 @@
 
 
 </div>
-<input type="number" hidden="hidden" value = "{{$fares2}}" name="projet_id2" >
+<input type="number" hidden="hidden" value = "{{$projet}}" name="projet_id" >
 
 <button type="submit" class="btn btn-primary" style="margin-top:10px">Submit</button>
 
