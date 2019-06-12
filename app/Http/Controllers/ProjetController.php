@@ -61,8 +61,8 @@ class ProjetController extends Controller
 
    
 
-      return view('photo', ['data2' => $data2 ]);
-       return view ('projets.participant', ['data2' => $data2 ]);
+    return view('photo', ['data2' => $data2 ]);
+    
        
  
     }
