@@ -9,28 +9,23 @@ class ParticipantController extends Controller
 
 {
 
-    public function create() {
+    public function create(){
 
         return view("projets.participant");
 
 
     }
 
-    public function store (cmsRequest $request) {
+    public function store(cmsRequest $request) {
+        return "saved"; 
 
-    $participant = new participant ();
-    
+    $participant = new participant();
     $participant->nom = $request->input('nom');
-    $participant->projet_id = $request->input('projet_id2');
-
+    $participant->role = $request->input('role');
+    $participant->projet_id = $request->input('projet_id');
     $participant->save();
 
-    return redirect('projets');
     
     
-    
-
-   
-
     }
 }
