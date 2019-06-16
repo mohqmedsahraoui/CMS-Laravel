@@ -58,9 +58,6 @@ class ProjetController extends Controller
 
    $data = DB::table('projets')->whereRaw('id')->get('id')->last();
    $data2 = implode("/n", array_flatten($data));
-
-   
-
     return view('photo', ['data2' => $data2 ]);
     
        
