@@ -17,6 +17,21 @@
 
          <label for="">Nom</label>
      <input type="text" name ="nom" class="form-control">
+
+     <div class="input-group control-group increment" >
+          <input type="text" name="nom" class="form-control">
+          <div class="input-group-btn"> 
+            <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Add</button>
+          </div>
+        </div>
+        <div class="clone hide">
+          <div class="control-group input-group" style="margin-top:10px">
+            <input type="text" name="nom" class="form-control">
+            <div class="input-group-btn"> 
+              <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
+            </div>
+          </div>
+        </div>
              
      </div>
 
@@ -32,10 +47,9 @@
 
     </div>
 
-
+<input name="projet_id" hidden="hidden" value="{{ $data4 }}">
 
 </div>
-<input type="number" hidden="hidden" value = "{{$projet}}" name="projet_id" >
 
 <button type="submit" class="btn btn-primary" style="margin-top:10px">Submit</button>
 
@@ -54,11 +68,31 @@
  }
  getSelectValue();
 
+ 
+ 
+ $(document).ready(function() {
+
+$(".btn-success").click(function(){ 
+    var html = $(".clone").html();
+    $(".increment").after(html);
+});
+
+$("body").on("click",".btn-danger",function(){ 
+    $(this).parents(".control-group").remove();
+});
+
+});
+
+
 </script>
 
 </body>
     
 
 @endsection
+
+
+
+
 
 
