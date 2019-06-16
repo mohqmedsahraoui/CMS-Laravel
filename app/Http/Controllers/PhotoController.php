@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 use App\Photo;
 
-
 class PhotoController extends Controller
 {
 
@@ -54,6 +53,7 @@ class PhotoController extends Controller
                 $photo->carousel=$data;
                 $photo->projet_id = $request->input('projet_id');
                 $photo->save();
+                $projet = $request ->input('projet_id');
 
             }
 
@@ -69,15 +69,15 @@ class PhotoController extends Controller
                 $photo->presentation=$data;
                 $photo->projet_id = $request->input('projet_id');
                 $photo->save();
-                $projet = $request->input('projet_id');
+                $projet = $request ->input('projet_id');
             
 
             }
-
          }
-         global $projet;   
-         return view('projets.participant', ['projet' => $projet]);
-      //  return back()->with('success', 'Your images has been successfully');
+         global $projet;
+         return redirect('participant');
+
+
 
        
     }
