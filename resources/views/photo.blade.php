@@ -23,14 +23,13 @@
           {{ session('success') }}
         </div> 
         @endif
+ <h3 class="jumbotron">Laravel Multiple File Upload</h3>
 
-    <h3 class="jumbotron">Laravel Multiple File Upload</h3>
 
-
-    <div class="carousel">
+   <div class="carousel">
 
     <h2>Image Carousel</h2>
-<form method="post" action="{{url('photo')}}" enctype="multipart/form-data">
+ <form method="post" action="{{url('photo')}}" enctype="multipart/form-data">
 
   {{csrf_field()}}
 
@@ -42,23 +41,20 @@
         </div>
         <div class="clone hide">
           <div class="control-group input-group" style="margin-top:10px">
-            <input type="file" name="source[]" class="form-control">
+            <input type="file" name="carousel[]" class="form-control">
             <div class="input-group-btn"> 
               <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
             </div>
           </div>
         </div>
-
-    </div>
+      </div>
 
           <!--ESPAAAAAACCCCCCCCCCCCEEEEE-->
 
     <div class="presentation">
 
           <h2>Image Presentation</h2>
-<form method="post" action="{{url('photo')}}" enctype="multipart/form-data">
 
-  {{csrf_field()}}
 
         <div class="input-group control-group increment" >
           <input type="file" name="presentation[]" class="form-control">
@@ -68,20 +64,18 @@
         </div>
         <div class="clone hide">
           <div class="control-group input-group" style="margin-top:10px">
-            <input type="file" name="source[]" class="form-control">
+            <input type="file" name="presentation[]" class="form-control">
             <div class="input-group-btn"> 
               <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
             </div>
           </div>
         </div>
-    
-        
-    </div>
+     </div>
 
         
-
+        @if(isset($data2))
         <input type="number" hidden="hidden" value = "{{$data2}}" name="projet_id" >
-
+        @endif
         <button type="submit" class="btn btn-primary" style="margin-top:10px">Suivant</button>
         
 
