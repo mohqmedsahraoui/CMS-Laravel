@@ -36,7 +36,6 @@ Route::get('participant','ParticipantController@create');
 Route::post('participant','ParticipantController@store');
 
 
-
 Route::get('photo','PhotoController@create');
 Route::post('photo','PhotoController@store');
 
