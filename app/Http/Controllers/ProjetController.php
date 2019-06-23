@@ -10,6 +10,7 @@ use App\Photo;
 use App\Form;
 use Auth;
 
+
 use Image;
 
 
@@ -46,12 +47,13 @@ class ProjetController extends Controller
     //Instance of objet
        $projet = new Projet ();
     //Request DataBase
-       $projet->titre = $request->input('titre');
+      $titre = $projet->titre = $request->input('titre');
        $projet->description = $request->input('description');
        $projet->intro = $request->input('intro');
        $projet->objectif = $request->input('objectif');
 
        $projet->user_id = Auth::user()->id;
+
        $projet->save();
 
         session()->flash ('success', 'Le projet a bien été enregsitré');
@@ -82,7 +84,7 @@ class ProjetController extends Controller
 
 
     }
-
+          
         public function destroy(Request $request, $id){
 
             $projet = Projet::find($id);
@@ -90,6 +92,15 @@ class ProjetController extends Controller
             $projet->delete();
 
             return redirect('projets');
+        }
+
+
+        public function detail(){
+            $getProjetInfos = DB::table('projets')->where('projets.id', \request('idprojet'))
+                        ->join('photos', 'projets.id', '=', 'photos.projet_id')
+                        ->get();
+            $getProjet = DB::table('projets')->where('id', \request('idprojet'))->first();
+            return view('front', ['getProjet' => $getProjet, 'getProjetInfos' => $getProjetInfos]);
         }
 
 }
