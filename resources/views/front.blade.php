@@ -177,57 +177,26 @@
         </div>
       </div>
     </div>
-    <div class="container">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel" data-wow-duration="1000ms" data-wow-delay="300ms" style = "">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
 
-     <!-- Wrapper for slides -->
-  <div class="carousel-inner" style = " width: 1150px; height:450px; ">
-
-    <div class="item active">
-      <img src="/images/slider/1.jpg" alt="Los Angeles">
-    </div>
-
-    <div class="item">
-      <img src="/images/slider/2.jpg" alt="Chicago">
-    </div>
-
-    <div class="item">
-      <img src="/images/slider/3.jpg" alt="New York">
-    </div>
-  </div>
-    
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators"></ol>
+  <!-- Wrapper for slides -->
   <div class="carousel-inner">
-    <div class="item active">
-            <img src="images/img1.png" alt="Image 1">
-            <div class="carousel-caption">
-              <h3>Image 1</h3>
-              <p>Description 1.</p>         
-            </div>
-          </div>
-    <div class="item">
-            <img src="images/img2.png" alt="Image 2">
-            <div class="carousel-caption">
-              <h3>Image 2</h3>
-              <p>Description 2.</p>         
-            </div>
-          </div>
- 
-</div>
-
-    <!-- Left and right controls 
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    -->
-   
+  <div class="carousel-item active">
+      <img src="/images/slider/2.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/images/slider/1.jpg" class="d-block w-100" alt="...">
+    </div>
   </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
 </div>
 
 
@@ -572,6 +541,18 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   
-  
+  <script>
+    $(document).ready(function(){ 
+      $('') 
+  for(var i=0 ; i< m.length ; i++) {
+    $('<div class="item"><img src="'+m[i]+'"><div class="carousel-caption"></div>   </div>').appendTo('.carousel-inner');
+    $('<li data-target="#carousel-example-generic" data-slide-to="'+i+'"></li>').appendTo('.carousel-indicators')
+
+  }
+  $('.item').first().addClass('active');
+  $('.carousel-indicators > li').first().addClass('active');
+  $('#carousel-example-generic').carousel();
+});
+  </script>
 </body>
 </html>
