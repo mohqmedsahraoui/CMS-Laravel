@@ -14,10 +14,17 @@ class CreateParticipantsTable extends Migration
     public function up()
     {
         Schema::create('participants', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('nom', 200);
-            $table->text('role');
+            $table->bigIncrements('id')->nullable();
+            $table->string('nomsuper', 200)->nullable();
+            $table->text('rolesuper')->nullable();
+            $table->string('nomPP', 200)->nullable();
+            $table->text('rolePP')->nullable();
+            $table->string('nomSP', 200)->nullable();
+            $table->text('roleSP')->nullable();
+            $table->string('nomTP', 200)->nullable();
+            $table->text('roleTP')->nullable();
             $table->timestamps();
+
         });
     }
 
