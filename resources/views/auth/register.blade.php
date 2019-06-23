@@ -1,77 +1,70 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+<form method="POST" action="{{ route('register') }}">
                         @csrf
+<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-t-85 p-b-20">
+				<form class="login100-form validate-form">
+					<span class="login100-form-title p-b-70">
+						Créer un compte !
+					</span>
+					<span class="login100-form-avatar">
+						<img src="{{asset('soltane/images/avatar-01.jpg')}}" alt="AVATAR">
+					</span>
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Entrez votre username">
+						<input class="input100" name="name" id="name" type="text" value="{{ old('name') }}">
+                        <span class="focus-input100" data-placeholder="{{ __('Name') }}"></span>
+                        
+					</div>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
+					<div class="wrap-input100 validate-input m-b-50" data-validate="Entrez votre email">
+						<input class="input100" type="email" name="email" id="email"  value="{{ old('email') }}">
+                        <span class="focus-input100" data-placeholder="{{ __('E-Mail Address') }}"></span>
+                    </div>
+                    
+					<div class="wrap-input100 validate-input m-b-50" data-validate="Entrez votre mot de passe">
+						<input class="input100" type="password" name="password" id="password"  value="{{ old('password') }}">
+                        <span class="focus-input100" data-placeholder="{{ __('Password') }}"></span>
+                        @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
-                        </div>
+                    </div>
+                    
+                    <div class="wrap-input100 validate-input m-b-50" data-validate="Confirmez votre mot de passe">
+						<input class="input100" type="password" name="password_confirmation" id="password-confirm"  value="{{ old('password') }}" required autocomplete="new-password">
+                        <span class="focus-input100" data-placeholder="{{ __('Password') }}"></span>
+					</div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit">
+                        {{ __('Register') }}
+						</button>
+					</div>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+					<ul class="login-more p-t-190">
+						<li>
+							<span class="txt1">
+								Vous avez deja un compte
+							</span>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
+							<a href="/login" class="txt2">
+								Se connecter
+							</a>
+						</li>
+					</ul>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+			</div>
+		</div>
+	</div>
+	
+
+    <div id="dropDownSelect1"></div>
+   
+    @endsection

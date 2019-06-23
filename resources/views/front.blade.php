@@ -6,13 +6,20 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Oxygen - One Page HTML Template | Themeum</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/animate.min.css" rel="stylesheet"> 
-  <link href="css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/lightbox.css" rel="stylesheet">
-  <link href="css/main.css" rel="stylesheet">
-  <link id="css-preset" href="css/presets/preset1.css" rel="stylesheet">
-  <link href="css/responsive.css" rel="stylesheet">
+  <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{ asset('css/animate.min.css')}}" rel="stylesheet"> 
+  <link href="{{ asset('css/font-awesome.min.css')}}" rel="stylesheet">
+  <link href="{{ asset('css/lightbox.css')}}" rel="stylesheet">
+  <link href="{{ asset('css/main.css')}}" rel="stylesheet">
+  <link id="css-preset" href="{{ asset('css/presets/preset1.css')}}" rel="stylesheet">
+  <link href="{{ asset('css/responsive.css')}}" rel="stylesheet">
+  <link href="{{ asset('css/less.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+
+</style>
+    
 
   <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -30,7 +37,7 @@
   <!--/.preloader-->
 
   <header id="home">
-  <div class="main-nav">
+  <div class="navbar navbar-expand-md navbar-light bg-primary">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -40,7 +47,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="index.html">
-            <h1><img class="img-responsive" src="images/logo.png" alt="logo"></h1>
+            <h1><img class="img-responsive" src="/images/logo.png" alt="logo"></h1>
           </a>                    
         </div>
         <div class="collapse navbar-collapse">
@@ -56,48 +63,37 @@
         </div>
       </div>
     </div><!--/#main-nav-->
-    <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="item active" style="background-image: url(images/slider/1.jpg)">
-          <div class="caption">
-            <h1 class="animated fadeInLeftBig">Welcome to <span>Oxygen</span></h1>
-            <p class="animated fadeInRightBig">Bootstrap - Responsive Design - Retina Ready - Parallax</p>
-            <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
-          </div>
-        </div>
-        <div class="item" style="background-image: url(images/slider/2.jpg)">
-          <div class="caption">
-            <h1 class="animated fadeInLeftBig">Say Hello to <span>Oxygen</span></h1>
-            <p class="animated fadeInRightBig">Bootstrap - Responsive Design - Retina Ready - Parallax</p>
-            <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
-          </div>
-        </div>
-        <div class="item" style="background-image: url(images/slider/3.jpg)">
-          <div class="caption">
-            <h1 class="animated fadeInLeftBig">We are <span>Creative</span></h1>
-            <p class="animated fadeInRightBig">Bootstrap - Responsive Design - Retina Ready - Parallax</p>
-            <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
-          </div>
-        </div>
-      </div>
-      <a class="left-control" href="#home-slider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
-      <a class="right-control" href="#home-slider" data-slide="next"><i class="fa fa-angle-right"></i></a>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+  <div class="carousel-inner" >
+  @foreach($getProjetInfos as $projet)
+    <div class="carousel-item active" style="">
+      <img class="d-block w-100" src="/images/carousel/{{$projet->carousel}}" alt="First slide">
+    </div>
+    @endforeach
+  
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+   
 
-      <a id="tohash" href="#services"><i class="fa fa-angle-down"></i></a>
-
-    </div><!--/#home-slider-->
-    
   </header><!--/#home-->
   <section id="services">
     <div class="container">
       <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
         <div class="row">
           <div class="text-center col-sm-8 col-sm-offset-2">
-            <h2>Our Services</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam</p>
+            <h2>Description Du Projet</h2>
+            <p>{{$getProjet->description}}</p>
           </div>
         </div> 
       </div>
+      <!-- 
       <div class="text-center our-services">
         <div class="row">
           <div class="col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
@@ -156,68 +152,99 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> 
+
+    <!-->
   </section><!--/#services-->
-  <section id="about-us" class="parallax">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="about-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-            <h2>About us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.Ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="our-skills wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-            <div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-              <p class="lead">User Experiances</p>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="95">95%</div>
-              </div>
-            </div>
-            <div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="400ms">
-              <p class="lead">Web Design</p>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="75">75%</div>
-              </div>
-            </div>
-            <div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="500ms">
-              <p class="lead">Programming</p>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="60">60%</div>
-              </div>
-            </div>
-            <div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-              <p class="lead">Fun</p>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="85">85%</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section><!--/#about-us-->
+
 
   <section id="portfolio">
     <div class="container">
       <div class="row">
         <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-          <h2>Our Portfolio</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam</p>
+          <h2>Objectif Du Projet</h2>
+          <p>{{$getProjet->objectif}}</p>
         </div>
       </div> 
     </div>
+
+    <section id="portfolio">
+    <div class="container">
+      <div class="row">
+        <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+          <h2>Image de présentation</h2>
+          <p>Voici quelque image de présentation du Projet</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" data-wow-duration="1000ms" data-wow-delay="300ms" style = "">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+     <!-- Wrapper for slides -->
+  <div class="carousel-inner" style = " width: 1150px; height:450px; ">
+
+    <div class="item active">
+      <img src="/images/slider/1.jpg" alt="Los Angeles">
+    </div>
+
+    <div class="item">
+      <img src="/images/slider/2.jpg" alt="Chicago">
+    </div>
+
+    <div class="item">
+      <img src="/images/slider/3.jpg" alt="New York">
+    </div>
+  </div>
+    
+  <div class="carousel-inner">
+    <div class="item active">
+            <img src="images/img1.png" alt="Image 1">
+            <div class="carousel-caption">
+              <h3>Image 1</h3>
+              <p>Description 1.</p>         
+            </div>
+          </div>
+    <div class="item">
+            <img src="images/img2.png" alt="Image 2">
+            <div class="carousel-caption">
+              <h3>Image 2</h3>
+              <p>Description 2.</p>         
+            </div>
+          </div>
  
+</div>
+
+    <!-- Left and right controls 
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    -->
+   
+  </div>
+</div>
+
+
+
+
+
+
+
+    
   </section><!--/#portfolio-->
 
   <section id="team">
     <div class="container">
       <div class="row">
         <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
-          <h2>The Team</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam</p>
+          <h2>Participants du projet {{$getProjet->titre}} </h2>
+          <p>Voici les participants du projet {{$getProjet->titre}} </p>
         </div>
       </div>
       <div class="team-members">
@@ -228,8 +255,8 @@
                 <img class="img-responsive" src="images/team/1.jpg" alt="">
               </div>
               <div class="member-info">
-                <h3>Marian Dixon</h3>
-                <h4>CEO &amp; Founder</h4>
+                <h3>Djamel Bouchaffra</h3>
+                <h4>Chef de section</h4>
                 <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
               </div>
             
@@ -278,7 +305,54 @@
       </div>            
     </div>
   </section><!--/#team-->
-<!--/>
+
+  <section id="about-us" class="parallax">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="about-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+            <h2>A Propos du CDTA</h2>
+            <p>Le Centre de Prototypage Technologique du CDTA a pour but d’assurer différentes prestations, dont la fabrication de prototypes d’expérimentation, de démonstration, de recherche appliquée, l’assistance technique et le conseil au profit des entreprises économiques, ainsi que la formation pratique, le perfectionnement et le recyclage.</p>
+            <p>Intégré dans un environnement de recherche développement et doté d’équipements numériques, d’outils de conception et de fabrication assistée par ordinateur. Le centre de prototypage technologique du CDTA pourra offrir à ses partenaires du secteur de l’enseignement supérieur et de la recherche scientifique ainsi qu’à celui du secteur socio-économique et industriel, la possibilité de bénéficier de services à haute valeurs ajoutées tel que :
+</p>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="our-skills wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+            <div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <p class="lead">User Experiances</p>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="95">95%</div>
+              </div>
+            </div>
+            <div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="400ms">
+              <p class="lead">Web Design</p>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="75">75%</div>
+              </div>
+            </div>
+            <div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="500ms">
+              <p class="lead">Programming</p>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="60">60%</div>
+              </div>
+            </div>
+            <div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+              <p class="lead">Fun</p>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="85">85%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!--/#about-us-->
+
+  
+
+  
+<!--
   <section id="features" class="parallax">
     <div class="container">
       <div class="row count">
@@ -304,9 +378,9 @@
         </div>                 
       </div>
     </div>
-  </section><!--/#features-->
+  </section>
 
- <--!/>
+ -->
 
   
   <section id="blog">
@@ -446,9 +520,9 @@
               <div class="contact-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
                 <ul class="address">
-                  <li><i class="fa fa-map-marker"></i> <span> Address:</span> 2400 South Avenue A </li>
-                  <li><i class="fa fa-phone"></i> <span> Phone:</span> +928 336 2000  </li>
-                  <li><i class="fa fa-envelope"></i> <span> Email:</span><a href="mailto:someone@yoursite.com"> support@oxygen.com</a></li>
+                  <li><i class="fa fa-map-marker"></i> <span> Address:</span> Cité 20 août 1956 Baba Hassen, Alger, Algérie</li>
+                  <li><i class="fa fa-phone"></i> <span> Phone:</span> +213 (0) 23 35 22 60 /61 /64 /68 /69  </li>
+                  <li><i class="fa fa-envelope"></i> <span> Email:</span><a href="mailto:scontact@cdta.dz">  contact@cdta.dz</a></li>
                   <li><i class="fa fa-globe"></i> <span> Website:</span> <a href="#">www.sitename.com</a></li>
                 </ul>
               </div>                            
@@ -481,16 +555,23 @@
     </div>
   </footer>
 
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="{{ asset('js/jquery.js')}}"></script>
+  <script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-  <script type="text/javascript" src="js/jquery.inview.min.js"></script>
-  <script type="text/javascript" src="js/wow.min.js"></script>
-  <script type="text/javascript" src="js/mousescroll.js"></script>
-  <script type="text/javascript" src="js/smoothscroll.js"></script>
-  <script type="text/javascript" src="js/jquery.countTo.js"></script>
-  <script type="text/javascript" src="js/lightbox.min.js"></script>
-  <script type="text/javascript" src="js/main.js"></script>
-
+  <script type="text/javascript" src="{{ asset('js/jquery.inview.min.js')}}"></script>
+  <script type="text/javascript" src="{{ asset('js/wow.min.js')}}"></script>
+  <script type="text/javascript" src="{{ asset('js/mousescroll.js')}}"></script>
+  <script type="text/javascript" src="{{ asset('js/smoothscroll.js')}}"></script>
+  <script type="text/javascript" src="{{ asset('js/jquery.countTo.js')}}"></script>
+  <script type="text/javascript" src="{{ asset('js/lightbox.min.js')}}"></script>
+  <script type="text/javascript" src="{{ asset('js/main.js')}}"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="{{ asset('js/less.js')}}"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  
+  
 </body>
 </html>

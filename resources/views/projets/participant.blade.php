@@ -17,27 +17,9 @@
 
          <label for="">Nom</label>
      <input type="text" name ="nom" class="form-control">
+</div>
 
-     <div class="input-group control-group increment" >
-          <input type="text" name="nom" class="form-control">
-          <div class="input-group-btn"> 
-            <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Add</button>
-          </div>
-        </div>
-        <div class="clone hide">
-          <div class="control-group input-group" style="margin-top:10px">
-            <input type="text" name="nom" class="form-control">
-            <div class="input-group-btn"> 
-              <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
-            </div>
-          </div>
-        </div>
-             
-     </div>
-
-             
-    
-    <div class="form-group">
+             <div class="form-group">
         <select id="list" class="form-control" name="role"  onchange="getSelectValue();">
             <option value="value">Choisir le rôle</option>
             <option value="Maitre A">Maitre A</option>
@@ -57,7 +39,7 @@
 
 
 
-
+ 
 
 <script>
  
