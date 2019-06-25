@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Oxygen - One Page HTML Template | Themeum</title>
+  <title>{{$getProjet->titre}}</title>
   <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
   <link href="{{ asset('css/animate.min.css')}}" rel="stylesheet"> 
   <link href="{{ asset('css/font-awesome.min.css')}}" rel="stylesheet">
@@ -76,7 +76,10 @@
                 <div class="carousel-inner" role="listbox">
                     @foreach( $getProjetInfos as $photo )
                         <div class="item {{ $loop->first ? ' active' : '' }}" >
-                            <img src="/images/carousel/{{$photo->carousel}}" >
+                            <img src="/images/carousel/{{$photo->carousel}}" alt=""  style=" background: rgba(0, 0, 0, 0.5);  "> 
+                            <div class="carousel-caption">
+                            <h3 style="text-align: center; color: white;">{{$photo->titre}}</h3>
+                            </div>
                         </div>
                     @endforeach
                 </div>
