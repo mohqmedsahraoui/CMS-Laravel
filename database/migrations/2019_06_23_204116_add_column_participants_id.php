@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateParticipantsTable extends Migration
+class AddColumnParticipantsId extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateParticipantsTable extends Migration
      */
     public function up()
     {
-        Schema::create('participants', function (Blueprint $table) {
-            $table->bigIncrements('id')->nullable();
-            $table->string('Nom', 200)->nullable();
-            $table->text('Role')->nullable();
-            
-            $table->timestamps();
-
+        Schema::table('participants2', function (Blueprint $table) {
+            $table->bigInteger('participants_id')->unsigned();
+            $table->foreign('participants_id')->references('id')->on('participants');
         });
     }
 
@@ -30,6 +26,8 @@ class CreateParticipantsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('participants');
+        Schema::table('participants2', function (Blueprint $table) {
+            //
+        });
     }
 }
