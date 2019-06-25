@@ -19,8 +19,8 @@ Route::put('projets/{id}','ProjetController@update');
 
 Route::delete('projets/{id}', 'ProjetController@destroy');
 
-Route::get('participant','ParticipantController@create');
-Route::post('participant/store','ParticipantController@store');
+Route::get('superviseur','SuperviseurController@create');
+Route::post('superviseur/store','SuperviseurController@store');
 
 Route::get('photo','PhotoController@create');
 Route::post('photo','PhotoController@store');

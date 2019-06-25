@@ -13,10 +13,11 @@ class AddColumnProjetId2 extends Migration
      */
     public function up()
     {
-        Schema::table('participants', function (Blueprint $table) {
+        Schema::table('superviseurs', function (Blueprint $table) {
             $table->bigInteger('projet_id')->unsigned();
             $table->foreign('projet_id')->references('id')->on('projets');
-        });
+        });    
+        
     }
 
     /**
@@ -26,7 +27,7 @@ class AddColumnProjetId2 extends Migration
      */
     public function down()
     {
-        Schema::table('participants', function (Blueprint $table) {
+        Schema::table('superviseurs', function (Blueprint $table) {
             $table->dropColumn('projet_id');
         });
     }

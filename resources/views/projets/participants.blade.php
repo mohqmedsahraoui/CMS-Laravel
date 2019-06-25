@@ -6,7 +6,7 @@
 
   <div class="row justify-content-center">
         <div class="col-md-8">
-         <h3 style="text-align: center;">Ajouter le superviseur du projet et un participant</h3>
+         <h3 style="text-align: center;">Ajoutez le(s) participant(s)</h3>
             <div class="card" style="padding: 30px;">
         
             <form method="post" action="{{url('participant/store?value='.$getValue)}}" enctype="multipart/form-data">
@@ -35,6 +35,27 @@
 
       </select>
   </div>
+
+
+  <label for="participant" class="col-md-2 col-form-label text-md-right">N° participants</label>
+  <div class="col-md-10">
+  <select name="nbrparticipant" id="list2" class="form-control">
+            <option value="value">Choisir le nombre de participants</option>
+            @for($a=1; $a<21; $a++)
+            
+            
+            <option value="{{$a}}">{{$a}}  Participants</option>
+           
+
+            
+            @endfor    
+        </select>
+  </div>
+
+
+
+
+
 
 
     @endfor

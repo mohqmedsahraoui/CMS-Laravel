@@ -1,18 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+use App\Superviseur;
 use Illuminate\Support\Facades\DB;
-use App\Participant;
+use Illuminate\Http\Request;
 
-class ParticipantController extends Controller
+class SuperviseurController extends Controller
 {
+    
     public function create()
     {
         $data3 = DB::table('projets')->whereRaw('id')->get('id')->last();
         $data4 = implode("/n", array_flatten($data3));
-        return view('projets.participant', ['data4' => $data4]);
+        return view('projets.superviseur', ['data4' => $data4]);
     }
 
     public function store(Request $request)
@@ -22,7 +22,7 @@ class ParticipantController extends Controller
        $value = \request('value');
        for($i=0; $i < $value; $i++){
 
-        DB::table('participants')->insert(
+        DB::table('superviseurs')->insert(
             ['Nom' => $request->Input('Nom'.$i), 'Role' => $request->Input('Role'.$i), 'projet_id' => $request->input('projet_id')]
         );
        }
@@ -31,11 +31,3 @@ class ParticipantController extends Controller
         return redirect('projets');
     }
 }
-
-
-            
-  
-
-
-
-    

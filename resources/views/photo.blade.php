@@ -126,8 +126,8 @@
         <div class="col-md-8">
         <div class="card" style="padding: 105px;">
 
-        <select name="participant" id="list" class="form-control">
-            <option value="value">Choisir le nombre de participants</option>
+        <select name="superviseur" id="list" class="form-control">
+            <option value="value">Choisir le nombre de superviseurs</option>
             @for($i=1; $i<6; $i++)
 
             <option value="{{$i}}"> {{$i}} Superviseur</option>

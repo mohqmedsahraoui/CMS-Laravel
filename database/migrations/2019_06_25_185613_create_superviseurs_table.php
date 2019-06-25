@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateParticipantsTable extends Migration
+class CreateSuperviseursTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateParticipantsTable extends Migration
      */
     public function up()
     {
-        Schema::create('participants', function (Blueprint $table) {
+        Schema::create('superviseurs', function (Blueprint $table) {
             $table->bigIncrements('id')->nullable();
             $table->string('Nom', 200)->nullable();
             $table->text('Role')->nullable();
-            
             $table->timestamps();
-
         });
     }
 
@@ -30,6 +28,6 @@ class CreateParticipantsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('participants');
+        Schema::dropIfExists('superviseurs');
     }
 }
