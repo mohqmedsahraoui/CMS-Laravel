@@ -17,27 +17,16 @@ class ParticipantController extends Controller
 
     public function store(Request $request)
     {
-        $participant= new participant();
-        $participant->nomsuper = $request->input('nomsuper');
-        $participant->rolesuper = $request->input('rolesuper');
-        $participant->nomPP = $request->input('nomPP');
-        $participant->rolePP = $request->input('rolePP');
-        $participant->nomSP = $request->input('nomSP');
-        $participant->roleSP = $request->input('roleSP');
-        $participant->nomTP = $request->input('nomTP');
-        $participant->roleTP = $request->input('roleTP');
 
-   
-$participant->projet_id = $request->input('projet_id'); 
+   if(\request('value')){
+       $value = \request('value');
+       for($i=0; $i < $value; $i++){
 
-
-      
-
-      
-
-       $participant->save();
-                
-        
+        DB::table('participants')->insert(
+            ['Nom' => $request->Input('Nom'.$i), 'Role' => $request->Input('Role'.$i), 'projet_id' => $request->input('projet_id')]
+        );
+       }
+   }        
         
         return redirect('projets');
     }

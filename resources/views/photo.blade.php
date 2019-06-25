@@ -126,11 +126,12 @@
         <div class="col-md-8">
         <div class="card" style="padding: 105px;">
 
-        <select name="participant"  id="list" class="form-control">
+        <select name="participant" id="list" class="form-control">
             <option value="value">Choisir le nombre de participants</option>
-            <option value="1">Un seul participant</option>
-            <option value="2">Deux participants</option>
-            <option value="3">Trois participants</option>
+            @for($i=1; $i<6; $i++)
+
+            <option value="{{$i}}"> {{$i}} Superviseur</option>
+            @endfor
         </select>
 
   </div>  

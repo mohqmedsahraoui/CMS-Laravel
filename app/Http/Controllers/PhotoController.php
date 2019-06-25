@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 
 use App\Photo;
-
+use Illuminate\Support\Facades\DB;
+    
 class PhotoController extends Controller
 {
 
@@ -77,26 +78,12 @@ class PhotoController extends Controller
          }
          global $projet;
 
-         $getValue = Input::has('participant');
-         if ($getValue == 1){
-             return redirect('participant?un=1');
-         }
-
-         if ($getValue == 2){
-            return redirect('participant?deux=2');
-        }
-
-        if ($getValue == 3){
-            return redirect('participant?trois=3');
-        }
+         $getValue = $request->Input('participant');
+         $data3 = DB::table('projets')->whereRaw('id')->get('id')->last();
+         $data4 = implode("/n", array_flatten($data3));
+         return view ('projets.participant', ['getValue'=>$getValue, 'data4' => $data4]);
 
         
-
-
-
-
-
-       
     }
 
 }
