@@ -11,6 +11,7 @@ Route::get('/home', 'ProjetController@index')->name('home');
 Route::get('projets', 'ProjetController@index');
 Route::get('projets/create', 'ProjetController@create');
 
+
 Route::post('projets', 'ProjetController@store');
 
 Route::get('projets/{id}/edit', 'ProjetController@edit');
@@ -38,7 +39,7 @@ Route::get('/searchData', function(Request $request){
             $searchs = DB::table('projets')->where('titre', 'like', '%'.$request->search.'%')->get();
 
             if($searchs){
-                foreach($searchs as $key => $search){
+       ù         foreach($searchs as $key => $search){
                     $csrf = csrf_field();
                     $method = method_field('DELETE');
                     return "<tr>
