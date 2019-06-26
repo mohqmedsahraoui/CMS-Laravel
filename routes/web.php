@@ -31,6 +31,7 @@ Route::get('logout', 'ProjetController@logout');
 Route::get('/front', function() {
     return view('front');
 } );
+Route::post('participants/store', 'Participant2Controller@store');
 
 Route::get('projets/view', 'ProjetController@detail');
 
@@ -39,7 +40,7 @@ Route::get('/searchData', function(Request $request){
             $searchs = DB::table('projets')->where('titre', 'like', '%'.$request->search.'%')->get();
 
             if($searchs){
-       ù         foreach($searchs as $key => $search){
+                foreach($searchs as $key => $search){
                     $csrf = csrf_field();
                     $method = method_field('DELETE');
                     return "<tr>

@@ -18,7 +18,7 @@
     <div class="col-sm-10">
       <input type="text" name="Nom{{$i}}" class="form-control" id="nom" >
     </div>
-
+</div>
     <label for="roleid" class="col-md-2 col-form-label text-md-right">Choisir un role</label>
   <div class="col-md-10">
       <select class="custom-select" name="Role{{$i}}">
@@ -38,18 +38,13 @@
 
   <label for="participant" class="col-md-2 col-form-label text-md-right">N° participants</label>
   <div class="col-md-10">
-  <select name="nbrparticipant" id="list2" class="form-control">
+  <select name="nbrparticipant{{$i}}" id="list2" class="form-control">
             <option value="value">Choisir le nombre de participants</option>
             @for($a=1; $a<21; $a++)
             <option value="{{$a}}">{{$a}}  Participants</option>
             @endfor    
         </select>
   </div>
-
-
-
-
-
 
 
     @endfor
