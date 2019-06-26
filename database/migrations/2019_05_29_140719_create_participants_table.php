@@ -14,7 +14,7 @@ class CreateParticipantsTable extends Migration
     public function up()
     {
         Schema::create('participants', function (Blueprint $table) {
-            $table->bigIncrements('id')->nullable();
+            $table->bigIncrements('id');
             $table->string('Nom', 200)->nullable();
             $table->text('Role')->nullable();
             

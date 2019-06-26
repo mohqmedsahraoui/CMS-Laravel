@@ -16,15 +16,22 @@
   <link href="{{ asset('css/less.css')}}" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" >
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
   <style>
+    .carousel-item {
+  height: 65vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 </style>
     
 
-  <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-  <![endif]-->
+ 
   
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
   <link rel="shortcut icon" href="images/favicon.ico">
@@ -37,143 +44,190 @@
   <!--/.preloader-->
 
   <header id="home">
-  <div class="navbar navbar-expand-md navbar-light bg-primary">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">
-            <h1><img class="img-responsive" src="/images/logo.png" alt="logo"></h1>
-          </a>                    
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">                 
-            <li class="scroll active"><a href="#home">Home</a></li>
-            <li class="scroll"><a href="#services">Service</a></li> 
-            <li class="scroll"><a href="#about-us">About Us</a></li>                     
-            <li class="scroll"><a href="#portfolio">Portfolio</a></li>
-            <li class="scroll"><a href="#team">Team</a></li>
-            <li class="scroll"><a href="#blog">Blog</a></li>
-            <li class="scroll"><a href="#contact">Contact</a></li>       
-          </ul>
-        </div>
-      </div>
-    </div><!--/#main-nav-->
-     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+ <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Start Bootstrap</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-                <!-- Indicators -->
-           <ol class="carousel-indicators">
+
+<!-- Carousel -->
+  
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000" >
+          <ol class="carousel-indicators">
                @foreach( $getProjetInfos as $photo )
                  <li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
                @endforeach
-           </ol>
-
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    @foreach( $getProjetInfos as $photo )
-                        <div class="item {{ $loop->first ? ' active' : '' }}" >
-                            <img src="/images/carousel/{{$photo->carousel}}" alt=""  style=" background: rgba(0, 0, 0, 0.5);  "> 
-                            <div class="carousel-caption">
-                            <h3 style="text-align: center; color: white;">{{$photo->titre}}</h3>
-                            </div>
-                        </div>
-                    @endforeach
+          </ol>
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide One - Set the background image for this slide in the line below -->
+            @foreach( $getProjetInfos as $photo )
+                <div class="item {{ $loop->first ? ' active' : '' }}" style=" height: 65vh;
+                                                                              min-height: 350px;
+                                                                              background: no-repeat center center scroll;
+                                                                              -webkit-background-size: cover;
+                                                                              -moz-background-size: cover;
+                                                                              -o-background-size: cover;
+                                                                              background-size: cover;
+                                                                              " >
+                <img src="/images/carousel/{{$photo->carousel}}" style="-webkit-filter: brightness(30%);" >
+                <div class="carousel-caption d-none d-md-block">
+                  <div class="carousel-item active align-items-center d-flex justify-content-center"  >
+                    <h3 class="display-3 text-white" style=" font-family: 'lato'; margin-top: 100px;">{{$photo->titre}}</h3>
+                   </div>
+                   
                 </div>
 
-                <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-   
+              </div>
+            @endforeach
+          </div>
 
-  </header><!--/#home-->
+          <!-- Controls -->
+      <a class="carousel-control-prev" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+      </a>
+
+        </div>
+      </div>
+<!-- END of Carousel -->
+
+    
+  </header>
+
+    
+  
   <section id="services">
+
+
     <div class="container">
       <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
         <div class="row">
           <div class="text-center col-sm-8 col-sm-offset-2">
-            <h2>Description Du Projet</h2>
-            <p>{{$getProjet->description}}</p>
+            <h2 style=" font-family: 'Ubuntu'; " >INTRODUCTION</h2>
+            <br>
+            <p style=" font-family: 'arvo'; " >{{$getProjet->intro}} </p>
           </div>
         </div> 
       </div>
-      
-  </section><!--/#services-->
+      <br>
 
 
-  <section id="portfolio">
+    <div class="container">
+      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+        <div class="row">
+          <div class="text-center col-sm-8 col-sm-offset-2">
+            <h2 style=" font-family: 'Ubuntu'; " >DESCRIPTION DU PROJET</h2>
+            <br>
+            <p style=" font-family: 'arvo'; " >{{$getProjet->description}} </p>
+          </div>
+        </div> 
+      </div>
+      <br>
+    
+  
+
+
+  
     <div class="container">
       <div class="row">
         <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-          <h2>Objectif Du Projet</h2>
+           <h2 style=" font-family: 'Ubuntu'; " >OBJECTIFS DU PROJET</h2>
           <p>{{$getProjet->objectif}}</p>
         </div>
       </div> 
     </div>
+    <br>
+    <br>
 
-    <section id="portfolio">
+    
     <div class="container">
       <div class="row">
         <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-          <h2>Image de présentation</h2>
+           <h2 style=" font-family: 'Ubuntu'; " >IMAGES DE PRESENTATION</h2>
           <p>Voici quelque image de présentation du Projet</p>
         </div>
       </div>
     </div>
 
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-
-                <!-- Indicators -->
-           <ol class="carousel-indicators">
+    <!-- Carousel -->
+  
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="500"  data-wow-duration="1000ms" data-wow-delay="300ms" >
+          <ol class="carousel-indicators">
                @foreach( $getProjetInfos as $photo )
                  <li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
                @endforeach
-           </ol>
+          </ol>
+        <div class="carousel-inner" role="listbox"  >
+          <!-- Slide One - Set the background image for this slide in the line below -->
+            @foreach( $getProjetInfos as $photo )
+                <div class="item {{ $loop->first ? ' active' : '' }}" style=" height: 65vh;
+                                                                              min-height: 350px;
+                                                                              background: no-repeat center center scroll;
+                                                                              -webkit-background-size: cover;
+                                                                              -moz-background-size: cover;
+                                                                              -o-background-size: cover;
+                                                                              background-size: cover;
+                                                                              "  >
+                <img src="/images/presentation/{{$photo->presentation}}" >
+                
+              </div>
+            @endforeach
+          </div>
 
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    @foreach( $getProjetInfos as $photo )
-                        <div class="item {{ $loop->first ? ' active' : '' }}" >
-                            <img src="/images/carousel/{{$photo->presentation}}" >
-                        </div>
-                    @endforeach
-                </div>
+          <!-- Controls -->
+      <a class="carousel-control-prev" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+      </a>
 
-                <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-
-
-
-
+        </div>
+      </div>
+<!-- END of Carousel -->
 
 
 
     
+
+    
   </section><!--/#portfolio-->
+
 
   <section id="team">
     <div class="container">
       <div class="row">
         <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
-          <h2>Participants du projet {{$getProjet->titre}} </h2>
+          <h2 style=" font-family: 'Ubuntu'; " >PARTICIPANTS {{$getProjet->titre}} </h2>
           <p>Voici les participants du projet {{$getProjet->titre}} </p>
         </div>
       </div>
@@ -250,27 +304,33 @@
         <div class="col-sm-6">
           <div class="our-skills wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
             <div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-              <p class="lead">User Experiances</p>
+              <p class="lead">Dedicated Training</p>
               <div class="progress">
-                <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="95">95%</div>
+                <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="100">100%</div>
               </div>
             </div>
             <div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="400ms">
-              <p class="lead">Web Design</p>
+              <p class="lead">Support & Expertise</p>
               <div class="progress">
-                <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="75">75%</div>
+                <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="100">100%</div>
               </div>
             </div>
             <div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="500ms">
-              <p class="lead">Programming</p>
+              <p class="lead">Software Development</p>
               <div class="progress">
-                <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="60">60%</div>
+                <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="100">100%</div>
               </div>
             </div>
             <div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-              <p class="lead">Fun</p>
+              <p class="lead">Technological Development</p>
               <div class="progress">
-                <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="85">85%</div>
+                <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="100">100%</div>
+              </div>
+            </div>
+            <div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="500ms">
+              <p class="lead">Physics & Electrical Characterization</p>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="100">100%</div>
               </div>
             </div>
           </div>
@@ -280,105 +340,10 @@
   </section><!--/#about-us-->
 
   
+<br>
+<br>
+<br>
 
-
-  
-  <section id="blog">
-    <div class="container">
-      <div class="row">
-        <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
-          <h2>Blog Posts</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam</p>
-        </div>
-      </div>
-      <div class="blog-posts">
-        <div class="row">
-          <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">
-            <div class="post-thumb">
-              <a href="#"><img class="img-responsive" src="images/blog/1.jpg" alt=""></a> 
-              <div class="post-meta">
-                <span><i class="fa fa-comments-o"></i> 3 Comments</span>
-                <span><i class="fa fa-heart"></i> 0 Likes</span> 
-              </div>
-              <div class="post-icon">
-                <i class="fa fa-pencil"></i>
-              </div>
-            </div>
-            <div class="entry-header">
-              <h3><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h3>
-              <span class="date">June 26, 2014</span>
-              <span class="cetagory">in <strong>Photography</strong></span>
-            </div>
-            <div class="entry-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            </div>
-          </div>
-          <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
-            <div class="post-thumb">
-              <div id="post-carousel"  class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#post-carousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#post-carousel" data-slide-to="1"></li>
-                  <li data-target="#post-carousel" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="item active">
-                    <a href="#"><img class="img-responsive" src="images/blog/2.jpg" alt=""></a>
-                  </div>
-                  <div class="item">
-                    <a href="#"><img class="img-responsive" src="images/blog/1.jpg" alt=""></a>
-                  </div>
-                  <div class="item">
-                    <a href="#"><img class="img-responsive" src="images/blog/3.jpg" alt=""></a>
-                  </div>
-                </div>                               
-                <a class="blog-left-control" href="#post-carousel" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a>
-                <a class="blog-right-control" href="#post-carousel" role="button" data-slide="next"><i class="fa fa-angle-right"></i></a>
-              </div>                            
-              <div class="post-meta">
-                <span><i class="fa fa-comments-o"></i> 3 Comments</span>
-                <span><i class="fa fa-heart"></i> 0 Likes</span> 
-              </div>
-              <div class="post-icon">
-                <i class="fa fa-picture-o"></i>
-              </div>
-            </div>
-            <div class="entry-header">
-              <h3><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h3>
-              <span class="date">June 26, 2014</span>
-              <span class="cetagory">in <strong>Photography</strong></span>
-            </div>
-            <div class="entry-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            </div>
-          </div>
-          <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="800ms">
-            <div class="post-thumb">
-              <a href="#"><img class="img-responsive" src="images/blog/3.jpg" alt=""></a>
-              <div class="post-meta">
-                <span><i class="fa fa-comments-o"></i> 3 Comments</span>
-                <span><i class="fa fa-heart"></i> 0 Likes</span> 
-              </div>
-              <div class="post-icon">
-                <i class="fa fa-video-camera"></i>
-              </div>
-            </div>
-            <div class="entry-header">
-              <h3><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h3>
-              <span class="date">June 26, 2014</span>
-              <span class="cetagory">in <strong>Photography</strong></span>
-            </div>
-            <div class="entry-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            </div>
-          </div>                    
-        </div>
-        <div class="load-more wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
-          <a href="#" class="btn-loadmore"><i class="fa fa-repeat"></i> Load More</a>
-        </div>                
-      </div>
-    </div>
-  </section><!--/#blog-->
 
   <section id="contact">
     <div id="contact-us" class="parallax">

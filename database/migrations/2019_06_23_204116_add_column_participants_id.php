@@ -15,7 +15,7 @@ class AddColumnParticipantsId extends Migration
     {
         Schema::table('participants2', function (Blueprint $table) {
             $table->bigInteger('participants_id')->unsigned();
-            $table->foreign('participants_id')->references('id')->on('participants');
+            $table->foreign('participants_id')->references('id')->on('participants')->onDelete('cascade');;
         });
     }
 
