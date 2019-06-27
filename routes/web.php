@@ -36,15 +36,11 @@ Route::post('participants/store', 'Participant2Controller@store');
 Route::get('projets/view', 'ProjetController@detail');
 
 Route::get('/searchData', function(Request $request){
-
         if($request->search){
             $searchs = DB::table('projets')->where('titre', 'like', '%'.$request->search.'%')->get();
 
             if($searchs){
-
-              foreach($searchs as $key => $search){
                 foreach($searchs as $key => $search){
-
                     $csrf = csrf_field();
                     $method = method_field('DELETE');
                     return "<tr>
@@ -64,7 +60,7 @@ Route::get('/searchData', function(Request $request){
                 }
             }
         }
-};
+});
 
 
 
