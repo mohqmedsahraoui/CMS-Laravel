@@ -10,6 +10,7 @@
   <link href="{{ asset('css/animate.min.css')}}" rel="stylesheet"> 
   <link href="{{ asset('css/font-awesome.min.css')}}" rel="stylesheet">
   <link href="{{ asset('css/lightbox.css')}}" rel="stylesheet">
+  <link href="{{ asset('css/footer.css')}}" rel="stylesheet">
   <link href="{{ asset('css/main.css')}}" rel="stylesheet">
   <link id="css-preset" href="{{ asset('css/presets/preset1.css')}}" rel="stylesheet">
   <link href="{{ asset('css/responsive.css')}}" rel="stylesheet">
@@ -17,6 +18,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" >
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+  <link href="{{asset('soltane/css/creative.min.css')}}" rel="stylesheet">
   <style>
     .carousel-item {
   height: 65vh;
@@ -47,7 +49,7 @@
  <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#">Start Bootstrap</a>
+    <a class="navbar-brand" href="#" style=" font-size: 30px; font-family: 'lato';  " >CDTA</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -59,13 +61,13 @@
               </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="#team" style=" font-family: 'lato'; " >Participants</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Services</a>
+          <a class="nav-link" href="#about-us" style=" font-family: 'lato'; " >A Propos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link" href="#contact" style=" font-family: 'lato'; " >Contactez Nous !</a>
         </li>
       </ul>
     </div>
@@ -84,19 +86,25 @@
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
             @foreach( $getProjetInfos as $photo )
-                <div class="item {{ $loop->first ? ' active' : '' }}" style=" height: 65vh;
+                <div class="item {{ $loop->first ? ' active' : '' }}" style=" height: 75vh;
                                                                               min-height: 350px;
                                                                               background: no-repeat center center scroll;
                                                                               -webkit-background-size: cover;
                                                                               -moz-background-size: cover;
                                                                               -o-background-size: cover;
-                                                                              background-size: cover;
-                                                                              " >
+                                                                              background-size: cover; " >
+
                 <img src="/images/carousel/{{$photo->carousel}}" style="-webkit-filter: brightness(30%);" >
                 <div class="carousel-caption d-none d-md-block">
-                  <div class="carousel-item active align-items-center d-flex justify-content-center"  >
-                    <h3 class="display-3 text-white" style=" font-family: 'lato'; margin-top: 100px;">{{$photo->titre}}</h3>
+                  <div class="fixed-top">
+                    <h3 class="display-3 text-white" style="  margin-top: 260px;">{{$photo->titre}}</h3>
                    </div>
+                   <div class="fixed-top">
+                    <p class="display-6 text-white" style=" margin-top: 355px;">{{$photo->intro}}</p>
+                   </div>
+                   
+                   <a class="btn btn-light btn-xl js-scroll-trigger" href=" #description ">Voir la Description</a>
+
                    
                 </div>
 
@@ -122,27 +130,46 @@
   </header>
 
     
-  
-  <section id="services">
+    <section class="page-section bg-primary" id="about" style=" height: 90vh; "   >
+  <div class="container"  >
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h1 class="text-white mt-0">INTRODUCTION</h1>
+        <hr class="divider light my-4">
+        <h5 class="text-white ">{{$getProjet->intro}}</h5>
+        
 
-
-    <div class="container">
-      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-        <div class="row">
-          <div class="text-center col-sm-8 col-sm-offset-2">
-            <h2 style=" font-family: 'Ubuntu'; " >INTRODUCTION</h2>
-            <br>
-            <p style=" font-family: 'arvo'; " >{{$getProjet->intro}} </p>
-          </div>
-        </div> 
+       
       </div>
-      <br>
+    </div>
+  </div>
+</section>
+  
+  
 
+
+<div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">
+<hr  style=" width: 70%;
+            height: 1px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #00008b;
+            border: 0 none;
+            margin-top: 20px;
+            opacity: 0.3 " >
+</div>
+
+<section  id="description" style=" width: 100%;
+                 padding: 0 7%;
+                 display: table;
+                 margin: 0;
+                 max-width: none;
+                 height: 100vh; " >
 
     <div class="container">
-      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="heading wow fadeInUp" data-wow-duration="1800ms" data-wow-delay="850ms">
         <div class="row">
-          <div class="text-center col-sm-8 col-sm-offset-2">
+          <div class="text-center col-sm-8 col-sm-offset-2" >
             <h2 style=" font-family: 'Ubuntu'; " >DESCRIPTION DU PROJET</h2>
             <br>
             <p style=" font-family: 'arvo'; " >{{$getProjet->description}} </p>
@@ -150,14 +177,33 @@
         </div> 
       </div>
       <br>
-    
+    </div>
+  </section>
+
+  <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">
+<hr  style=" width: 70%;
+            height: 1px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #00008b;
+            border: 0 none;
+            margin-top: 20px;
+            opacity: 0.3 " >
+</div>
   
 
+
+<section style=" width: 100%;
+                 padding: 0 7%;
+                 display: table;
+                 margin: 0;
+                 max-width: none;
+                 height: 100vh; " >
 
   
     <div class="container">
       <div class="row">
-        <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+        <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1800ms" data-wow-delay="850ms">
            <h2 style=" font-family: 'Ubuntu'; " >OBJECTIFS DU PROJET</h2>
           <p>{{$getProjet->objectif}}</p>
         </div>
@@ -166,10 +212,25 @@
     <br>
     <br>
 
+  </section>
+
+  <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">
+<hr  style=" width: 70%;
+            height: 1px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #00008b;
+            border: 0 none;
+            margin-top: 20px;
+            opacity: 0.3 " >
+</div>
+
+
+<section>
     
     <div class="container">
       <div class="row">
-        <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+        <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1800ms" data-wow-delay="850ms">
            <h2 style=" font-family: 'Ubuntu'; " >IMAGES DE PRESENTATION</h2>
           <p>Voici quelque image de présentation du Projet</p>
         </div>
@@ -193,9 +254,8 @@
                                                                               -webkit-background-size: cover;
                                                                               -moz-background-size: cover;
                                                                               -o-background-size: cover;
-                                                                              background-size: cover;
-                                                                              "  >
-                <img src="/images/presentation/{{$photo->presentation}}" >
+                                                                              background-size: cover; "  >
+                <img   class="d-block w-100" src="/images/presentation/{{$photo->presentation}}" >
                 
               </div>
             @endforeach
@@ -216,17 +276,32 @@
 <!-- END of Carousel -->
 
 
+</section>
+
+<div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">
+<hr  style=" width: 70%;
+            height: 1px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #00008b;
+            border: 0 none;
+            margin-top: 20px;
+            opacity: 0.3 " >
+</div>
+
+
+
 
     
 
     
-  </section><!--/#portfolio-->
+  
 
 
   <section id="team">
     <div class="container">
       <div class="row">
-        <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
+        <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="2000ms" data-wow-delay="500ms">
           <h2 style=" font-family: 'Ubuntu'; " >PARTICIPANTS {{$getProjet->titre}} </h2>
           <p>Voici les participants du projet {{$getProjet->titre}} </p>
         </div>
@@ -290,11 +365,22 @@
     </div>
   </section><!--/#team-->
 
+  <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">
+<hr  style=" width: 70%;
+            height: 1px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #00008b;
+            border: 0 none;
+            margin-top: 20px;
+            opacity: 0.3 " >
+</div>
+
   <section id="about-us" class="parallax">
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
-          <div class="about-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+          <div class="about-info wow fadeInUp" data-wow-duration="1800ms" data-wow-delay="500ms">
             <h2>A Propos du CDTA</h2>
             <p>Le Centre de Prototypage Technologique du CDTA a pour but d’assurer différentes prestations, dont la fabrication de prototypes d’expérimentation, de démonstration, de recherche appliquée, l’assistance technique et le conseil au profit des entreprises économiques, ainsi que la formation pratique, le perfectionnement et le recyclage.</p>
             <p>Intégré dans un environnement de recherche développement et doté d’équipements numériques, d’outils de conception et de fabrication assistée par ordinateur. Le centre de prototypage technologique du CDTA pourra offrir à ses partenaires du secteur de l’enseignement supérieur et de la recherche scientifique ainsi qu’à celui du secteur socio-économique et industriel, la possibilité de bénéficier de services à haute valeurs ajoutées tel que :
@@ -349,16 +435,16 @@
     <div id="contact-us" class="parallax">
       <div class="container">
         <div class="row">
-          <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-            <h2>Contact Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam</p>
+          <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="500ms">
+            <h2>Contactez Nous!</h2>
+            <p>Soyez a l'aise de nous contactez a tout moments</p>
           </div>
         </div>
-        <div class="contact-form wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+        <div class="contact-form wow fadeIn" data-wow-duration="1800ms" data-wow-delay="850ms">
           <div class="row">
             <div class="col-sm-6">
               <form id="main-contact-form" name="contact-form" method="post" action="#">
-                <div class="row  wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <div class="row  wow fadeInUp" data-wow-duration="1800ms" data-wow-delay="300ms">
                   <div class="col-sm-6">
                     <div class="form-group">
                       <input type="text" name="name" class="form-control" placeholder="Name" required="required">
@@ -395,30 +481,73 @@
           </div>
         </div>
       </div>
-    </div>        
+    </div>  
+
   </section><!--/#contact-->
-  <footer id="footer">
-    <div class="footer-top wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-      <div class="container text-center">
-        <div class="footer-logo">
-          <a href="index.html"><img class="img-responsive" src="images/logo.png" alt=""></a>
-        </div>
-        
+
+
+  
+  <footer class="footer-distributed">
+
+      <div class="footer-left">
+
+        <h3>Company<span>logo</span></h3>
+
+        <p class="footer-links">
+          <a href="#">Home</a>
+          ·
+          <a href="#">Blog</a>
+          ·
+          <a href="#">Pricing</a>
+          ·
+          <a href="#">About</a>
+          ·
+          <a href="#">Faq</a>
+          ·
+          <a href="#">Contact</a>
+        </p>
+
+        <p class="footer-company-name">Company Name &copy; 2015</p>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6">
-            <p>&copy;2019 CDTA Theme.</p>
-          </div>
-          <div class="col-sm-6">
-            <p class="pull-right">Designed by CESI </a></p>
-          </div>
+
+      <div class="footer-center">
+
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span>21 Revolution Street</span> Paris, France</p>
         </div>
+
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>+1 555 123456</p>
+        </div>
+
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="mailto:support@company.com">support@company.com</a></p>
+        </div>
+
       </div>
-    </div>
-  </footer>
+
+      <div class="footer-right">
+
+        <p class="footer-company-about">
+          <span>About the company</span>
+          Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+        </p>
+
+        <div class="footer-icons">
+
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-github"></i></a>
+
+        </div>
+
+      </div>
+
+    </footer>
 
   <script type="text/javascript" src="{{ asset('js/jquery.js')}}"></script>
   <script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>

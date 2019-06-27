@@ -79,37 +79,55 @@
 
 <body id="page-top">
 @yield('content')
-<!-- Navigation -->
+<!-- Navigation --> 
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
   <div class="container">
-    <a class="navbar-brand js-scroll-trigger" style="color: black;" href="#page-top"><img src="{{asset('soltane/images/CDTA.jpg')}}" style=" width:60px; " ></a>
+    <a class="navbar-brand js-scroll-trigger" style="color: white;" href="#page-top"><img src="{{asset('soltane/images/CDTA.jpg')}}" style=" width:60px; " ></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto my-2 my-lg-0">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" style="color: black;" href="#about">About</a>
+          <a class="nav-link js-scroll-trigger" style="color: white;" href="{{ url('/#About') }}">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" style="color: black;" href="#services">Services</a>
+          <a class="nav-link js-scroll-trigger" style="color: white;" href="{{ url('/#contact') }} ">Contactez-Nous</a>
         </li>
-        @if(Auth::check())
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" style="color: black;" href="{{ route('logout') }}">{{ __('Deconnecter') }}</a>
-        </li>
-        @else
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" style="color: black;" href="{{ route('login') }}">{{ __('Conexion') }}</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" style="color: black;"s href="{{ route('register') }}">{{ __('Inscription') }}</a>
-        </li>
-        @endif
+        @guest
+                            <li class="nav-item">
+                                <a class="nav-link js-scroll-trigger" href="{{ route('login') }}" style=" color: white; ">{{ __('Connexion') }}</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link js-scroll-trigger" href="{{ route('register') }}" style=" color: white; ">{{ __('Inscription') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link js-scroll-trigger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style=" color: white; " >
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" style=" color: black; " >
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
       </ul>
     </div>
   </div>
 </nav>
+
+
 
 
   <!-- Bootstrap core JavaScript -->
