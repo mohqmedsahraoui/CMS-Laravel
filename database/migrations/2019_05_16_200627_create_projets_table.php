@@ -20,7 +20,7 @@ class CreateProjetsTable extends Migration
             $table->text('description');
             $table->text('objectif');
             $table->Biginteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
             
         });

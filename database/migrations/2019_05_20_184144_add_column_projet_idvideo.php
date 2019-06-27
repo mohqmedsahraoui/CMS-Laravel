@@ -15,7 +15,7 @@ class AddColumnProjetIdvideo extends Migration
     {
         Schema::table('Videos', function (Blueprint $table) {
             $table->bigInteger('projet_id')->unsigned();
-            $table->foreign('projet_id')->references('id')->on('projets')->onDelete('cascade');;
+            $table->foreign('projet_id')->references('id')->on('projets');
         });
     }
 
