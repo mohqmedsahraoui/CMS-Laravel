@@ -78,10 +78,10 @@ class PhotoController extends Controller
          }
          global $projet;
 
-         $getValue = $request->Input('participant');
+         $getValue = $request->Input('superviseur');
          $data3 = DB::table('projets')->whereRaw('id')->get('id')->last();
          $data4 = implode("/n", array_flatten($data3));
-         return view ('projets.participant', ['getValue'=>$getValue, 'data4' => $data4]);
+         return view ('projets.superviseur', ['getValue'=>$getValue, 'data4' => $data4]);
 
         
     }

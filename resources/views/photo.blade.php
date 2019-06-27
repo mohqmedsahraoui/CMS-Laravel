@@ -126,8 +126,8 @@
         <div class="col-md-8">
         <div class="card" style="padding: 105px;">
 
-        <select name="participant" id="list" class="form-control">
-            <option value="value">Choisir le nombre de participants</option>
+        <select name="superviseur" id="list" class="form-control">
+            <option value="value">Choisir le nombre de superviseurs</option>
             @for($i=1; $i<6; $i++)
 
             <option value="{{$i}}"> {{$i}} Superviseur</option>
@@ -139,6 +139,8 @@
 </div>
         
  </div>
+
+
 
  
 
@@ -164,7 +166,9 @@
 
  
 
-  </form>      
+  </form>   
+
+   
 
   </div>
 
@@ -206,5 +210,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
 
 </body>
+</form>   
+
+
 
 </html>

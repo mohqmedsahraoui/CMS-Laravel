@@ -20,8 +20,8 @@ Route::put('projets/{id}','ProjetController@update');
 
 Route::delete('projets/{id}', 'ProjetController@destroy');
 
-Route::get('participant','ParticipantController@create');
-Route::post('participant/store','ParticipantController@store');
+Route::get('superviseur','SuperviseurController@create');
+Route::post('superviseur/store','SuperviseurController@store');
 
 Route::get('photo','PhotoController@create');
 Route::post('photo','PhotoController@store');
@@ -31,6 +31,7 @@ Route::get('logout', 'ProjetController@logout');
 Route::get('/front', function() {
     return view('front');
 } );
+Route::post('participants/store', 'Participant2Controller@store');
 
 Route::get('projets/view', 'ProjetController@detail');
 
@@ -39,7 +40,11 @@ Route::get('/searchData', function(Request $request){
             $searchs = DB::table('projets')->where('titre', 'like', '%'.$request->search.'%')->get();
 
             if($searchs){
+<<<<<<< HEAD
               foreach($searchs as $key => $search){
+=======
+                foreach($searchs as $key => $search){
+>>>>>>> 214a5594b79c35426c6af5c03551ea4152caa680
                     $csrf = csrf_field();
                     $method = method_field('DELETE');
                     return "<tr>
