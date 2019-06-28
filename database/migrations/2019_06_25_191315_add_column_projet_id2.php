@@ -15,7 +15,7 @@ class AddColumnProjetId2 extends Migration
     {
         Schema::table('superviseurs', function (Blueprint $table) {
             $table->bigInteger('projet_id')->unsigned();
-            $table->foreign('projet_id')->references('id')->on('projets');
+            $table->foreign('projet_id')->references('id')->on('projets')->onDelete('cascade');
         });    
         
     }

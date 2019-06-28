@@ -15,12 +15,12 @@ class AddColumnSuperviseursId extends Migration
     {
         Schema::table('participants', function (Blueprint $table) {
             $table->bigInteger('superviseur_id')->unsigned();
-            $table->foreign('superviseur_id')->references('id')->on('superviseurs');
+            $table->foreign('superviseur_id')->references('id')->on('superviseurs')->onDelete('cascade');
         });
 
         Schema::table('participants', function (Blueprint $table) {
             $table->bigInteger('projet_id')->unsigned();
-            $table->foreign('projet_id')->references('id')->on('projets');
+            $table->foreign('projet_id')->references('id')->on('projets')->onDelete('cascade');
         });
     }
 
