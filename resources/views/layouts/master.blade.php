@@ -58,7 +58,7 @@
     <!-- All links from layouts app -->
 
 
-  <title>Creative - Start Bootstrap Theme</title>
+  <title>CMS</title>
 
   <!-- Font Awesome Icons -->
   <link href="{{('soltane/klimqx/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -82,7 +82,7 @@
 <!-- Navigation --> 
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
   <div class="container">
-    <a class="navbar-brand js-scroll-trigger" style="color: white;" href="#page-top"><img src="{{asset('soltane/images/CDTA.jpg')}}" style=" width:60px; " ></a>
+    <a class="navbar-brand js-scroll-trigger" style="color: white;" href="#page-top">CDTA</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
