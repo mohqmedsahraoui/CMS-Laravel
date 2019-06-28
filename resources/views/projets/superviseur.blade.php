@@ -1,8 +1,28 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 
-<div class="container" style="">
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+    
+  <title>Ajout de photos et de participants</title>
+
+  <link rel="stylesheet" href=  
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">  
+    <script src=  
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">  
+    </script>  
+    <script src=  
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">  
+    </script>  
+    <script src=  
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">  
+    </script>  
+</head>
+
+
+<div class="container" style="margin-top:100px;">
 
   <div class="row justify-content-center">
         <div class="col-md-8">
@@ -18,8 +38,7 @@
     <div class="col-sm-10">
       <input type="text" name="Nom{{$i}}" class="form-control" id="nom" >
     </div>
-</div>
-    <label for="roleid" class="col-md-2 col-form-label text-md-right">Choisir un role</label>
+    <label for="roleid" class="col-md-2 col-form-label">Choisir un role</label>
   <div class="col-md-10">
       <select class="custom-select" name="Role{{$i}}">
           <option value="">Selectionnez un role existant</option>
@@ -36,7 +55,7 @@
   </div>
 
 
-  <label for="participant" class="col-md-2 col-form-label text-md-right">N° participants</label>
+  <label for="participant" class="col-md-2 col-form-label">N°participants</label>
   <div class="col-md-10">
   <select name="nbrparticipant{{$i}}" id="list2" class="form-control">
             <option value="value">Choisir le nombre de participants</option>
@@ -58,7 +77,6 @@
 
 
 
-<div class="form-group row" style="text-align: center;">
   
 
   
@@ -67,7 +85,6 @@
         <button type="submit" class="btn btn-success">Suivant</button>
       </div>
     </div>
-   </div>
 
 
     
@@ -79,10 +96,8 @@
   
   
 
-  </div>
-</div>
-  </div>
-</div>
+
+
 </form>
 
 @endsection
