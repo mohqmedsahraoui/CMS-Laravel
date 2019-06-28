@@ -98,9 +98,17 @@ class ProjetController extends Controller
         public function detail(){
             $getProjetInfos = DB::table('projets')->where('projets.id', \request('idprojet'))
                         ->join('photos', 'projets.id', '=', 'photos.projet_id')
+                        ->join('superviseurs', 'projets.id', '=', 'superviseurs.projet_id')
                         ->get();
+
+            $getSup = DB::table('projets')->where('projets.id', \request('idprojet'))
+                        ->join('superviseurs', 'projets.id', '=', 'superviseurs.projet_id')
+                        ->get();
+
             $getProjet = DB::table('projets')->where('id', \request('idprojet'))->first();
-            return view('front', ['getProjet' => $getProjet, 'getProjetInfos' => $getProjetInfos]);
+            return view('front', ['getProjet' => $getProjet, 'getProjetInfos' => $getProjetInfos],['getProjet' => $getProjet, 'getSup' => $getSup] );
+
+           
         }
 
 }
