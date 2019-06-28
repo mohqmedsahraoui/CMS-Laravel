@@ -296,7 +296,7 @@
 
     
   
-
+ 
 
   <section id="team">
     <div class="container">
@@ -306,57 +306,26 @@
           <p>Voici les participants du projet {{$getProjet->titre}} </p>
         </div>
       </div>
+
+
       <div class="team-members">
         <div class="row">
+
+@foreach( $getSup as $superviseurs )
           <div class="col-sm-3">
             <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
-              <div class="member-image">
-                <img class="img-responsive" src="images/team/1.jpg" alt="">
-              </div>
               <div class="member-info">
-                <h3>Djamel Bouchaffra</h3>
-                <h4>Chef de section</h4>
+                <h3>{{$superviseurs->Nom}}</h3>
+                <h4>{{$superviseurs->Role}}</h4>
                 <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-              </div>
-            
+              </div>  
             </div>
           </div>
-          <div class="col-sm-3">
-            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="500ms">
-              <div class="member-image">
-                <img class="img-responsive" src="images/team/2.jpg" alt="">
-              </div>
-              <div class="member-info">
-                <h3>Lawrence Lane</h3>
-                <h4>UI/UX Designer</h4>
-                <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-              </div>
-              
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="800ms">
-              <div class="member-image">
-                <img class="img-responsive" src="images/team/3.jpg" alt="">
-              </div>
-              <div class="member-info">
-                <h3>Lois Clark</h3>
-                <h4>Developer</h4>
-                <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-              </div>
-              
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="1100ms">
-              <div class="member-image">
-                <img class="img-responsive" src="images/team/4.jpg" alt="">
-              </div>
-              <div class="member-info">
-                <h3>Marian Dixon</h3>
-                <h4>Support Manager</h4>
-                <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-              </div>
+@endforeach
+
+
+
+         
              
             </div>
           </div>
@@ -491,7 +460,7 @@
 
       <div class="footer-left">
 
-        <h3>Company<span>logo</span></h3>
+        <h3>CDTA</h3>
 
         <p class="footer-links">
           <a href="#">Home</a>
@@ -507,45 +476,29 @@
           <a href="#">Contact</a>
         </p>
 
-        <p class="footer-company-name">Company Name &copy; 2015</p>
+        <p class="footer-company-name">CDTA &copy; 2019</p>
       </div>
 
       <div class="footer-center">
 
         <div>
           <i class="fa fa-map-marker"></i>
-          <p><span>21 Revolution Street</span> Paris, France</p>
+          <p><span>Cité 20 août 1956 Baba Hassen</span> Alger, Algérie</p>
         </div>
 
         <div>
           <i class="fa fa-phone"></i>
-          <p>+1 555 123456</p>
+          <p>+213 (0) 23 35 22 60 /61 /64 /68 /69  </p>
         </div>
 
         <div>
           <i class="fa fa-envelope"></i>
-          <p><a href="mailto:support@company.com">support@company.com</a></p>
+          <p><a href="mailto:support@company.com">contact@cdta.dz</a></p>
         </div>
 
       </div>
 
-      <div class="footer-right">
-
-        <p class="footer-company-about">
-          <span>About the company</span>
-          Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-        </p>
-
-        <div class="footer-icons">
-
-          <a href="#"><i class="fa fa-facebook"></i></a>
-          <a href="#"><i class="fa fa-twitter"></i></a>
-          <a href="#"><i class="fa fa-linkedin"></i></a>
-          <a href="#"><i class="fa fa-github"></i></a>
-
-        </div>
-
-      </div>
+      
 
     </footer>
 

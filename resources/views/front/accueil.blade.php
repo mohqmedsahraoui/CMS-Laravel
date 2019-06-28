@@ -16,7 +16,7 @@
       </div>
       <div class="col-lg-8 align-self-baseline">
         <p class="text-white-75 font-weight-light mb-5">Créer par CESI.EXIA</p>
-        <a class="btn btn-primary btn-xl js-scroll-trigger" href="{{ url('projets') }}">En Savoir plus</a>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="{{ url('projets') }}">Qui êtes-vous ?</a>
       </div>
     </div>
   </div>
