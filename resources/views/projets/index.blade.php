@@ -1,11 +1,35 @@
 @extends('layouts.master')
 
 @section('content')
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 
+<style type="text/css">
+    .main {
+    width: 50%;
+    margin: 70px auto;
+}
 
-<div class="container" style="margin-top: 100px;">
-    <div class="row">
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+</style>
+
+
+<div class="container" style="margin-top: 130px; width: 100%;"  >
         <div class="col-md-12">
 
     @if (session()->has ('success'))
@@ -17,27 +41,38 @@
 
     @endif
 
-    <h1 class="text-success" style="text-align: center;">
-
-</h1>
+    <h1 class="text-success" style="text-align: center;"></h1>
         <!-- Search form -->
 
-        <h1>La liste des projets</h1>
-        <div class="pull-right" align="right">
+    <h1 style="text-align: center;
+               ">MES PROJETS</h1>
+
+    <div class=" col-lg-2 col-lg-offset-4 " style="margin: 50px auto; display: flex; justify-content: center; "  >
         <a href="{{url('projets/create')}}" class="btn btn-success">Nouveau projet</a>
-        </div>
+    </div>
     
-        <div class="md-form mt-0">
-  <input class="form-control" type="text" onkeyup="search()" id="search" placeholder="Search" aria-label="Search">
-</div>
-        <table class="table getData">
+<div style="width: 100%; margin-top: 50px;" >
+
+    <table class="table getData table-striped table-responsive-md btn-table"  >
+            <div class="main">
+                <div class="input-group" style=" " > 
+                    <input class="form-control" type="text" onkeyup="search()" id="search" placeholder="Rechercher un projet" aria-label="Search">
+                    <button class="btn btn-secondary" type="button">
+                        <i class="fa fa-search"></i>
+                    </button>
+
+                </div>
+            </div>
+
+            <caption>CDTA</caption>
+
            <head>
             <tr>
-                <th style="width: 300px"> Title </th>
+                <th style="width: 200px ; text-align: center;" >TITRE</th>
 
-                <th style="width: 400px; display:inline-block;">Presentation</th>
-                <th style="width: 200px">Date<i class="far fa-arrow-up"></i><i class="far fa-arrow-down"></i></th>
-                <th style="width: 300px">actions</th>
+                <th style="max-width: 300px; width: 100px; display:inline-block; text-align: center;">PRESENTATION</th>
+                
+                <th style="width: 300px; text-align: center;">ACTIONS</th>
 
             </tr>
             </head>
@@ -45,9 +80,9 @@
             <tbody>
             @foreach($projets as $projet)
                 <tr>
-                    <td>{{$projet ->titre}}<br> {{ $projet->user->name}}</td>
+                    <td>{{$projet ->titre}}<br> <span style="opacity: 0.5" > {{ $projet->user->name}}</span></td>
                     <td>{{$projet ->description }}</td>
-                    <td>{{$projet ->created_at}}</td>
+                    
                     <td>
                     
                     
@@ -68,6 +103,9 @@
                 @endforeach
             </tbody>
         </table>
+    </div>
+
+
 
         <table class="table generateData" style="display: none;">
            <head>
@@ -88,6 +126,15 @@
         </div>
     </div>
 </div>
+
+</div>
+
+
+<footer>
+  <div class="container">
+    <div class="small text-center text-muted">Copyright &copy; 2019 - CDTA</div>
+  </div>
+</footer>
 
 <script>   
     function search(){
