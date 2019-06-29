@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>{{$getProjet->titre}}</title>
+  <title>Exemple</title>
   <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
   <link href="{{ asset('css/animate.min.css')}}" rel="stylesheet"> 
   <link href="{{ asset('css/font-awesome.min.css')}}" rel="stylesheet">
@@ -68,7 +68,7 @@
           <a class="nav-link" href="#about-us" style=" font-family: 'lato'; " >A Propos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#contact" style=" font-family: 'lato'; " >Contacte</a>
+          <a class="nav-link" href="#contact" style=" font-family: 'lato'; " >Contact</a>
         </li>
       </ul>
     </div>
@@ -78,54 +78,44 @@
 
 <!-- Carousel -->
   
-      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000" >
-          <ol class="carousel-indicators">
-               @foreach( $getProjetInfos as $photo )
-                 <li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
-               @endforeach
-          </ol>
-        <div class="carousel-inner" role="listbox">
-          <!-- Slide One - Set the background image for this slide in the line below -->
-            @foreach( $getProjetInfos as $photo )
-                <div class="item {{ $loop->first ? ' active' : '' }}" style=" height: 75vh;
-                                                                              min-height: 350px;
-                                                                              background: no-repeat center center scroll;
-                                                                              -webkit-background-size: cover;
-                                                                              -moz-background-size: cover;
-                                                                              -o-background-size: cover;
-                                                                              background-size: cover; " >
-
-                <img class="d-block w-100" src="/images/carousel/{{$photo->carousel}}" style="-webkit-filter: brightness(30%);" >
-                
-                <div class="carousel-caption d-none d-md-block">
-                  <div class="fixed-top">
-                    <h3 class="display-3 text-white" style="  margin-top: 260px;">{{$photo->titre}}</h3>
-                   </div>
-                   <div class="fixed-top">
-                    <p class="display-6 text-white" style=" margin-top: 355px;">{{$photo->intro}}</p>
-                   </div>
-                   
-                   <a class="btn btn-light btn-xl js-scroll-trigger" href=" #description ">Voir la Description</a>
-
-                   
-                </div>
-
-              </div>
-            @endforeach
-          </div>
-
-          <!-- Controls -->
-      <a class="carousel-control-prev" href="#carousel-example-generic" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carousel-example-generic" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-      </a>
-
-        </div>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="/images/design/1.jpg" style="-webkit-filter: brightness(30%); " alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h1 style="color: white;" >Titre du projet</h1>
+        <p>Petite Intro</p>
       </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="/images/design/2.jpg" style="-webkit-filter: brightness(30%); " alt="Second slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h1 style="color: white;" >Titre du projet</h1>
+        <p>Petite Intro</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="/images/design/3.jpg"  style="-webkit-filter: brightness(30%); " alt="Third slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h1 style="color: white;" >Titre du projet</h1>
+        <p>Petite Intro</p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 <!-- END of Carousel -->
 
     
@@ -138,7 +128,7 @@
       <div class="col-lg-8 text-center">
         <h1 class="text-white mt-0">INTRODUCTION</h1>
         <hr class="divider light my-4">
-        <h5 class="text-white ">{{$getProjet->intro}}</h5>
+        <h5 class="text-white ">Une petite introduction de votre projet</h5>
         
 
        
@@ -174,7 +164,7 @@
           <div class="text-center col-sm-8 col-sm-offset-2" >
             <h2 style=" font-family: 'Ubuntu'; " >DESCRIPTION DU PROJET</h2>
             <br>
-            <p style=" font-family: 'arvo'; " >{{$getProjet->description}} </p>
+            <p style=" font-family: 'arvo'; " >Dans cette section vous pouvez mettre une grande description de votre projet qui va le decrire avec details</p>
           </div>
         </div> 
       </div>
@@ -207,7 +197,7 @@
       <div class="row">
         <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="500ms">
            <h2 style=" font-family: 'Ubuntu'; " >OBJECTIFS DU PROJET</h2>
-          <p>{{$getProjet->objectif}}</p>
+          <p>Cette section est résever aux objectifs de votre projets, vous pouvez insérer autant de text souhaité</p>
         </div>
       </div> 
     </div>
@@ -233,47 +223,42 @@
       <div class="row">
         <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="500ms">
            <h2 style=" font-family: 'Ubuntu'; " >IMAGES DE PRESENTATION</h2>
-          <p>Voici quelque image de présentation du Projet</p>
+          <p>Dans cette parties vous êtes libre de mettre des photos de réalisation du projet</p>
         </div>
       </div>
     </div>
 
     <!-- Carousel -->
-  
-      <div id="carousel-example-generic-pr" class="carousel slide" data-ride="carousel" data-interval="2000" >
-          <ol class="carousel-indicators">
-               @foreach( $getProjetPresentation as $photo )
-                 <li data-target="#carousel-example-generic-pr" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
-               @endforeach
-          </ol>
-        <div class="carousel-inner" role="listbox"  >
-          <!-- Slide One - Set the background image for this slide in the line below -->
-            @foreach( $getProjetPresentation as $photo )
-                <div class="item {{ $loop->first ? ' active' : '' }}" style=" height: 65vh;
-                                                                              min-height: 350px;
-                                                                              background: no-repeat center center scroll;
-                                                                              -webkit-background-size: cover;
-                                                                              -moz-background-size: cover;
-                                                                              -o-background-size: cover;
-                                                                              background-size: cover; "  >
-                <img  class="d-block w-100" src="/images/presentation/{{$photo->presentation}}" >
-                
-              </div>
-            @endforeach
-          </div>
-
-          <!-- Controls -->
-      <a class="carousel-control-prev" href="#carousel-example-generic-pr" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carousel-example-generic-pr" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-      </a>
-
-        </div>
-      </div>
+    <div id="carouselExampleIndicators-pr" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators-pr" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators-pr" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators-pr" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="/images/design/1.jpg"  alt="First slide">
+      
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="/images/design/2.jpg" alt="Second slide">
+      
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="/images/design/3.jpg" alt="Third slide">
+      <div class="carousel-caption d-none d-md-block">
+       
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators-pr" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators-pr" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 <!-- END of Carousel -->
 
 
@@ -303,26 +288,57 @@
     <div class="container">
       <div class="row">
         <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="500ms">
-          <h2 style=" font-family: 'Ubuntu'; " >Superviseurs {{$getProjet->titre}} </h2>
-          <p>Voici les superviseurs du projet {{$getProjet->titre}} </p>
+          <h2 style=" font-family: 'Ubuntu'; " >Superviseurs Du Projet</h2>
+          <p>Cette partie est réserver pour les superviseurs du projet</p>
         </div>
       </div>
 
 
       <div class="team-members">
         <div class="row">
-
-@foreach( $getSup as $superviseurs )
           <div class="col-sm-3">
             <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
               <div class="member-info">
-                <h3>{{$superviseurs->Nom}}</h3>
-                <h4>{{$superviseurs->Role}}</h4>
-                <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+                <h3>Superviseur 1</h3>
+                <h4>Son Role</h4>
+                <p>Petite description</p>
               </div>  
             </div>
           </div>
-@endforeach
+
+           <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <div class="member-info">
+                <h3>Superviseur 2</h3>
+                <h4>Son Role</h4>
+                <p>Petite description</p>
+              </div>  
+            </div>
+          </div>
+
+           <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <div class="member-info">
+                <h3>Superviseur 3</h3>
+                <h4>Son Role</h4>
+                <p>Petite description</p>
+              </div>  
+            </div>
+          </div>
+
+           <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <div class="member-info">
+                <h3>Superviseur 4</h3>
+                <h4>Son Role</h4>
+                <p>Petite description</p>
+              </div>  
+            </div>
+          </div>
+
+
+
+          
 
 
 

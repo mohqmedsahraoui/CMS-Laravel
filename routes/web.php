@@ -7,6 +7,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'ProjetController@index')->name('home');
+Route::get('/design', function() {
+    return view('design');
+});
 
 Route::get('projets', 'ProjetController@index');
 Route::get('projets/create', 'ProjetController@create');
@@ -25,6 +28,9 @@ Route::post('superviseur/store','SuperviseurController@store');
 
 Route::get('photo','PhotoController@create');
 Route::post('photo','PhotoController@store');
+
+Route::get('presentation','PresentationController@create');
+Route::post('presentation','PresentationController@store');
 
 Route::get('logout', 'ProjetController@logout');
 

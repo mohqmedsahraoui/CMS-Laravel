@@ -2,17 +2,22 @@
 
 @section('content')
 
+
 <form method="POST" action="{{ route('login') }}">
                         @csrf
 <div class="limiter">
-		<div class="container-login100">
+		<div class="container-login100" id="soltane">
 			<div class="wrap-login100 p-t-85 p-b-20">
 				<form class="login100-form validate-form">
 					<span class="login100-form-title p-b-70">
 						Connexion
 					</span>
+
+					<br>
+					<br>
+
 					<span class="login100-form-avatar">
-						<img src="{{asset('soltane/images/CDTA.jpg')}}" alt="AVATAR">
+						<img src="{{asset('soltane/images/logo2.jpg')}}" alt="AVATAR">
 					</span>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter username">
@@ -55,5 +60,6 @@
 	
 
     <div id="dropDownSelect1"></div>
+
    
     @endsection

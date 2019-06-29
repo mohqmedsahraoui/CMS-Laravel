@@ -36,7 +36,7 @@
   <div class="form-group row">
     <label for="nomsup" class="col-sm-2 col-form-label">Nom du superviseur</label>
     <div class="col-sm-10">
-      <input type="text" name="Nom{{$i}}" class="form-control" id="nom" >
+      <input type="text" name="Nom{{$i}}" class="form-control" style="border-radius: 15px;" id="nom" >
     </div>
     <label for="roleid" class="col-md-2 col-form-label">Choisir un role</label>
   <div class="col-md-10">
@@ -67,20 +67,10 @@
 
 
     @endfor
-    <input name="projet_id" hidden="hidden" value="{{ $data4 }}">
-
-
-
-
-    
-
-
-
+    <input name="projet_id" hidden="hidden" value="{{ $data6 }}">
 
   
-
-  
-  <div class="form-group row" style="text-align: center;">
+  <div class="form-group row" style="text-align: center; display: flex; justify-content: center;">
       <div class="col-sm-10">
         <button type="submit" class="btn btn-success">Suivant</button>
       </div>

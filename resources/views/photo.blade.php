@@ -1,4 +1,4 @@
-
+ 
 @extends('layouts.master')
 
 @section('content')
@@ -50,13 +50,11 @@
 
 
         
-          <div class="carousel">
+    <div class="carousel">
           <form method="post" action="{{url('photo')}}" enctype="multipart/form-data">
-  {{csrf_field()}}
+              {{csrf_field()}}
 
 
-
-  
     
       <div class="custom-file mb-3 fieldGroup " style="" >
 
@@ -94,88 +92,18 @@
 </div> 
 </div> 
 
-  <!--ESPAAAAAACCCCCCCCCCCCEEEEE-->
-
- <br>
- <br>
- 
-
-  <div class="presentation">
-
- 
-
-          <h2>Ajoutez les 3 images de présentation</h2>
-
- 
-
-          <div class="custom-file mb-3" style="margin-top:10px">
-            <input type="file" name="presentation[]" class="custom-file-input" id="customFile">
-            <label class="custom-file-label" for="customFile">Choose file</label>
-            </div>
-
-       
-                <div class="custom-file mb-3" style="margin-top:10px">
-            <input type="file" name="presentation[]" class="custom-file-input" id="customFile">
-            <label class="custom-file-label" for="customFile">Choose file</label>
-            </div>
-
-         
-<div class="custom-file mb-3" style="margin-top:10px">
-            <input type="file" name="presentation[]" class="custom-file-input" id="customFile">
-            <label class="custom-file-label" for="customFile">Choose file</label>
-            </div>
-            </div>
-          
+      
+  </div>
 
 
-        <div class="container, " style="margin-left : 10px">  
-
-        <h2>Ajoutez le nombre de superviseurs  </h2>  
-        <form action="./" method="GET">
-<div class="row justify-content-center">
-        <div class="col-md-8">
-        <div class="card" style="padding: 105px;">
-
-        <select name="superviseur" id="list" class="form-control">
-            <option value="value">Choisir le nombre de superviseurs</option>
-            @for($i=1; $i<6; $i++)
-
-            <option value="{{$i}}"> {{$i}} Superviseur</option>
-            @endfor
-        </select>
-
-  </div>  
-</div>  
-</div>
-        
-</div>
-
-</div>
-
-
-
-
-
- 
-
-       
 
         @if(isset($data2))
 
-
-
-
         <input type="number" hidden="hidden" value = "{{$data2}}" name="projet_id">
-        <button type="submit" class="btn btn-primary" style="margin-left:900px;">Suivant</button>
 
-
+        <button type="submit" class="btn btn-primary" style=" margin: 50px auto; display:flex; justify-content: center;">Suivant</button>
 
         @endif
-
-
-       
-
- 
 
         </form>      
         </form>      

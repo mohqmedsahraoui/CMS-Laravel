@@ -98,7 +98,10 @@ class ProjetController extends Controller
         public function detail(){
             $getProjetInfos = DB::table('projets')->where('projets.id', \request('idprojet'))
                         ->join('photos', 'projets.id', '=', 'photos.projet_id')
-                        ->join('superviseurs', 'projets.id', '=', 'superviseurs.projet_id')
+                        ->get();
+
+            $getProjetPresentation = DB::table('projets')->where('projets.id', \request('idprojet'))
+                        ->join('presentations', 'projets.id', '=', 'presentations.projet_id')
                         ->get();
 
             $getSup = DB::table('projets')->where('projets.id', \request('idprojet'))
@@ -106,7 +109,8 @@ class ProjetController extends Controller
                         ->get();
 
             $getProjet = DB::table('projets')->where('id', \request('idprojet'))->first();
-            return view('front', ['getProjet' => $getProjet, 'getProjetInfos' => $getProjetInfos],['getProjet' => $getProjet, 'getSup' => $getSup] );
+
+            return view('front', ['getProjet' => $getProjet, 'getProjetInfos' => $getProjetInfos],['getProjet' => $getProjet, 'getSup' => $getSup, 'getProjetPresentation' => $getProjetPresentation ] );
 
            
         }

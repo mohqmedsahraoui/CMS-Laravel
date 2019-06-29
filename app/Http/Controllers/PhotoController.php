@@ -40,7 +40,7 @@ class PhotoController extends Controller
 
         ]); */
         
-        if($request->hasfile('carousel') && $request->hasfile('presentation'))
+        if($request->hasfile('carousel') )
          {
           
 
@@ -60,28 +60,12 @@ class PhotoController extends Controller
             }
 
             
-            foreach($request->file('presentation') as $image2)
-            {
-
-
-                $photo= new photo();
-                $name=$image2->getClientOriginalName();
-                $image2->move(public_path().'/images/presentation', $name);  
-                $data = $name;
-                $photo->presentation=$data;
-                $photo->projet_id = $request->input('projet_id');
-                $photo->save();
-                $projet = $request ->input('projet_id');
-            
-
-            }
          }
          global $projet;
 
-         $getValue = $request->Input('superviseur');
          $data3 = DB::table('projets')->whereRaw('id')->get('id')->last();
          $data4 = implode("/n", array_flatten($data3));
-         return view ('projets.superviseur', ['getValue'=>$getValue, 'data4' => $data4]);
+         return view ('presentation', ['data4' => $data4]);
 
         
     }
