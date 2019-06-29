@@ -15,6 +15,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+   
 
 
     
@@ -82,7 +83,7 @@
 <!-- Navigation --> 
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
   <div class="container">
-    <a class="navbar-brand js-scroll-trigger" style="color: white;" href="#page-top">CDTA</a>
+    <a class="navbar-brand js-scroll-trigger" style="color: white;" href="{{ url('/') }}">CDTA</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -92,7 +93,7 @@
           <a class="nav-link js-scroll-trigger" style="color: white;" href="{{ url('/#About') }}">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" style="color: white;" href="{{ url('/#contact') }} ">Contactez-Nous</a>
+          <a class="nav-link js-scroll-trigger" style="color: white;" href="{{ url('/#contact') }} ">Contact</a>
         </li>
         @guest
                             <li class="nav-item">

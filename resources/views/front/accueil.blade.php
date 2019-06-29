@@ -15,7 +15,7 @@
         <hr class="divider my-4">
       </div>
       <div class="col-lg-8 align-self-baseline">
-        <p class="text-white-75 font-weight-light mb-5">Créer par CESI.EXIA</p>
+        <p class="text-white-75 font-weight-light mb-5">Created By CESI.EXIA</p>
         <a class="btn btn-primary btn-xl js-scroll-trigger" href="{{ url('projets') }}">Qui êtes-vous ?</a>
       </div>
     </div>
@@ -30,11 +30,11 @@
       <div class="col-lg-8 text-center">
         <h1 class="text-white mt-0">Explication du concept</h1>
         <hr class="divider light my-4">
-        <h5 class="text-white ">Vous en avez marre de créer des sites WEB avec vos propre mains! Nous Avons la solutions pour sa!</h5>
+        <h5 class="text-white ">Vous en avez marre de créer des sites WEB avec vos propre mains! Nous Avons la solutions pour ca!</h5>
         <p class="text-white"> Creer votre compte à partir de maintenant et commencer a creer des sites web profesionnels pour la présentation de votre projet </p>
 
         <br>
-        <a class="btn btn-light btn-xl js-scroll-trigger" href=" #services ">Voir les Particularité</a>
+        <a class="btn btn-light btn-xl js-scroll-trigger" href="{{ url('design') }}" target="_blank">Voir à quoi resemble votre site !</a>
       </div>
     </div>
   </div>
