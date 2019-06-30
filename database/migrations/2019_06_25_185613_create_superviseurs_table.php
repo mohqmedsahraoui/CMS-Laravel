@@ -17,7 +17,7 @@ class CreateSuperviseursTable extends Migration
             $table->bigIncrements('id');
             $table->string('Name', 200)->nullable();
             $table->text('Role')->nullable();
-            $table->timestamps();
+            
         });
     }
 
