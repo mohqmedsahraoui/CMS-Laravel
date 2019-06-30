@@ -8,7 +8,8 @@
 
   <div class="row justify-content-center">
         <div class="col-md-8" >
-         <h3 style="text-align: center;">Ajoutez le(s) participant(s)</h3>
+         <h3 style="text-align: center;">Ajoutez le(s) participant(s) du premier Superviseur</h3>
+         <br>
             <div class="card" >
           
             <form method="post" action="{{url('participants/store?value1='.$participants1.'&value2='.$participants2.'&value3='.$participants3.'&value4='.$participants4.'&value5='.$participants5.'&superviseurid1='.$superviseurid1.'&superviseurid2='.$superviseurid2.'&superviseurid3='.$superviseurid3.'&superviseurid4='.$superviseurid4.'&superviseurid5='.$superviseurid5.'&projet_id='.$projet_id)}}" enctype="multipart/form-data">

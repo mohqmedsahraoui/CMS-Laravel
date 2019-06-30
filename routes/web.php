@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 Route::get('/', function () {
     return view('front.accueil');
 });
@@ -28,6 +29,16 @@ Route::post('superviseur/store','SuperviseurController@store');
 
 Route::get('photo','PhotoController@create');
 Route::post('photo','PhotoController@store');
+
+Route::get('deleteprojets', function(){
+
+
+    DB::table('projets')->where('id',\request('idprojet'))->delete();
+    
+    return redirect('projets');
+    
+    });
+    
 
 Route::get('presentation','PresentationController@create');
 Route::post('presentation','PresentationController@store');

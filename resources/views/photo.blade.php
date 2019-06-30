@@ -1,4 +1,3 @@
- 
 @extends('layouts.master')
 
 @section('content')
@@ -16,7 +15,9 @@
 
 <body>
 
+
   <div class="container" style="margin-top:100px;">
+
 
  
 
@@ -45,45 +46,42 @@
  </div>
 @endif
 
+<h2 style="text-align:center;">Ajoutez les images du carousel :</h2>
+
+<br>
+<br>
 
 
-
-
-        
     <div class="carousel">
           <form method="post" action="{{url('photo')}}" enctype="multipart/form-data">
               {{csrf_field()}}
 
 
     
-      <div class="custom-file mb-3 fieldGroup " style="" >
+      <div class="custom-file mb-3 fares" style="" >
 
       <div class="input-group-addon" style="display:flex; justify-content: center;"> 
-                <a href="javascript:void(0)" class="btn btn-success addMore"><span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span>Ajoutez</a>
+                <a href="javascript:void(0)" class="btn btn-success addMore"><span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span>Ajouter</a>
             </div>
           
           <br>
          
-        <div class="input-group">
-            <input type="file" name="carousel[]" class="custom-file-input" id="customFile" />
-            <label class="custom-file-label" for="customFile">Choose file</label>
-            
-            
-        </div>
-        
+     
     </div>
     
     
+    
+    <br>
     <br>
  
 
 <!-- copy of input fields group -->
-<div class="custom-file mb-3 fieldGroupCopy" style="display: none;">
+<div class=" custom-file mb-3 clone hide" hidden="true">
 <br>
-    <div class="input-group">
-    <input type="file" name="carousel[]" class="custom-file-input" id="inputGroupFile02"/>
+    <div class="input-group control-group"  onclick="ChangeName()">
+    <input type="file" name="carousel[]" class="custom-file-input" id="customFile"/>
 
-        <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+        <label class="custom-file-label" for="customFile">Choisir un fichier</label>
 
         <div class="input-group-addon"> 
             <a href="javascript:void(0)" class="btn btn-danger remove"><span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span>Retirez</a>
@@ -108,7 +106,33 @@
         </form>      
         </form>      
 
+        
+
   </div>
+
+  <h2 style="text-align:center;">Voici à quoi ressemble un carousel :</h2>
+
+  <div id="carouselExampleControls" data-interval="500"class="carousel slide" data-ride="carousel" style="width:50%; margin:50px auto;">
+  <div class="carousel-inner" >
+    <div class="carousel-item active" >
+      <img class="d-block w-100" src="/images/1.jpg" style="height:55vh;" alt="First slide">
+    </div>
+    <div class="carousel-item"  >
+      <img class="d-block w-100" src="/images/2.jpg" style="height:55vh;" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="/images/contact-bg.jpg" style="height:55vh;" alt="First slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
   
         
@@ -117,29 +141,34 @@
 <script type="text/javascript">
 
  
+$(document).ready(function() {
 
+ 
 
-    $(document).ready(function(){
-    //group add limit
-    var maxGroup = 4.5;
-    
-    //add more fields group
-    $(".addMore").click(function() {
-        if($('body').find('.fieldGroup').length < maxGroup){
-            var fieldHTML = '<div class="form-group fieldGroup ">'+$(".fieldGroupCopy").html()+'</div>';
-            $('body').find('.fieldGroup').after(fieldHTML);
-        }
-        else{
-            alert('Maximum '+maxGroup+' groups are allowed.');
-        }
-    });
-    
-    //remove fields group
-    $("body").on("click",".remove",function(){ 
-        $(this).parents(".fieldGroup").remove();
-    });
+$(".addMore").click(function(){
+
+    var html = $(".clone").html();
+
+    $(".fares").after(html);
+
 });
 
+
+
+$("body").on("click",".remove",function(){
+
+    $(this).parents(".control-group").remove();
+
+});
+
+
+
+});
+
+
+   
+function ChangeName(){
+  
 
 // Add the following code if you want the name of the file appear on select
 $(".custom-file-input").on("change", function() {
@@ -148,6 +177,8 @@ $(".custom-file-input").on("change", function() {
 });
 
 
+
+}
 
 
  

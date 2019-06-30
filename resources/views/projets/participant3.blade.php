@@ -4,6 +4,7 @@
 @if(!isset($participants4))
 <h2>Votre projet a ete créé avec succes <a href="{{url('projets')}}"> retourner a la liste des projets</a></h2>
 @else
+
   <div class="row justify-content-center" >
         <div class="col-md-8" >
          <h3 style="text-align: center;">Ajoutez le(s) participant(s)</h3>

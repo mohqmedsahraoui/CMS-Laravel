@@ -22,12 +22,12 @@
 </head>
 
 
-<div class="container" style="margin-top:100px;">
+<div class="container" style="margin-top:150px;">
 
   <div class="row justify-content-center">
         <div class="col-md-8">
          <h3 style="text-align: center;">Ajoutez le(s) superviseur(s) du projet</h3>
-            <div class="card" style="padding: 30px;">
+            <div class="card" style="padding: 50px; width:80vh; display:flex; justify-content:center; margin:30px auto;">
         
             <form method="post" action="{{url('superviseur/store?value='.$getValue)}}" enctype="multipart/form-data">
 {{ csrf_field() }}
@@ -70,8 +70,8 @@
     <input name="projet_id" hidden="hidden" value="{{ $data6 }}">
 
   
-  <div class="form-group row" style="text-align: center; display: flex; justify-content: center;">
-      <div class="col-sm-10">
+  <div class="form-group row">
+      <div class="col-sm-10" style="justify-content: center;">
         <button type="submit" class="btn btn-success">Suivant</button>
       </div>
     </div>
