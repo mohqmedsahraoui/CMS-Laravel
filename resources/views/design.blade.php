@@ -22,7 +22,7 @@
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <style>
     .carousel-item {
-  height: 65vh;
+  height: 80vh;
   min-height: 350px;
   background: no-repeat center center scroll;
   -webkit-background-size: cover;
@@ -89,21 +89,21 @@
       <img class="d-block w-100" src="/images/design/1.jpg" style="-webkit-filter: brightness(30%); " alt="First slide">
       <div class="carousel-caption d-none d-md-block">
         <h1 style="color: white;" >Titre du projet</h1>
-        <p>Petite Intro</p>
+        <p>Centre de Développement des Technologies Avancées (CDTA) </p>
       </div>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="/images/design/2.jpg" style="-webkit-filter: brightness(30%); " alt="Second slide">
       <div class="carousel-caption d-none d-md-block">
         <h1 style="color: white;" >Titre du projet</h1>
-        <p>Petite Intro</p>
+        <p>Centre de Développement des Technologies Avancées (CDTA) </p>
       </div>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="/images/design/3.jpg"  style="-webkit-filter: brightness(30%); " alt="Third slide">
       <div class="carousel-caption d-none d-md-block">
         <h1 style="color: white;" >Titre du projet</h1>
-        <p>Petite Intro</p>
+        <p>Centre de Développement des Technologies Avancées (CDTA) </p>
       </div>
     </div>
   </div>
@@ -128,7 +128,7 @@
       <div class="col-lg-8 text-center">
         <h1 class="text-white mt-0">INTRODUCTION</h1>
         <hr class="divider light my-4">
-        <h5 class="text-white ">Une petite introduction de votre projet</h5>
+        <h5 class="text-white ">Lorem ipsum dolor sit amet, ea tantas luptatum probatus ius. Est inani doctus ne, atqui eloquentiam ne ius, laboramus similique cum ea. At dicat evertitur instructior ius, eirmod conclusionemque cu nam. Mei ne magna expetenda scribentur, sea eu vide apeirian consectetuer. Amet iuvaret mandamus sit cu.</h5>
         
 
        
@@ -161,10 +161,18 @@
     <div class="container">
       <div class="heading wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="500ms">
         <div class="row">
-          <div class="text-center col-sm-8 col-sm-offset-2" >
-            <h2 style=" font-family: 'Ubuntu'; " >DESCRIPTION DU PROJET</h2>
+          <div class="" >
+            <h2 style=" font-family: 'Ubuntu'; text-align: center;" >DESCRIPTION DU PROJET</h2>
             <br>
-            <p style=" font-family: 'arvo'; " >Dans cette section vous pouvez mettre une grande description de votre projet qui va le decrire avec details</p>
+            <p style=" font-size: 18px; ">Lorem ipsum dolor sit amet, ea tantas luptatum probatus ius. Est inani doctus ne, atqui eloquentiam ne ius, laboramus similique cum ea. At dicat evertitur instructior ius, eirmod conclusionemque cu nam. Mei ne magna expetenda scribentur, sea eu vide apeirian consectetuer. Amet iuvaret mandamus sit cu.
+
+            Duo ne ferri debitis, ex nominavi constituam sea. Ius eius suscipit fabellas ut. Eu est tractatos suavitate, pro ei utinam epicuri similique, sale quodsi ei vix. Et nam debet dicant, discere recusabo ei sit, per decore placerat at. Sint expetenda eloquentiam et pro. Per ad periculis explicari, enim reque per te, semper dolorem vel ea.
+
+            Alterum electram vel ea, eos ut graecis ocurreret. In postea delectus mei. Per ei ferri gloriatur scribentur, doming quaerendum mei eu. Et nisl congue vix. Tacimates salutatus mel at, ne pri mutat tincidunt assueverit.
+
+            Ea graece invenire eos. Ad feugait intellegam pri. His ne quot delenit, eum te causae propriae mandamus. Summo falli perpetua nam id.
+
+            Iudico dissentiet sea an. Te nobis adipisci mei, possit aliquid fierent ei vel. Te duo elit diceret aliquid. At solet aliquid cum. Omnis mentitum mea ei.</p>
           </div>
         </div> 
       </div>
@@ -172,41 +180,7 @@
     </div>
   </section>
 
-  <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">
-<hr  style=" width: 70%;
-            height: 1px;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: #00008b;
-            border: 0 none;
-            margin-top: 20px;
-            opacity: 0.3 " >
-</div>
-  
-
-
-<section style=" width: 100%;
-                 padding: 0 7%;
-                 display: table;
-                 margin: 0;
-                 max-width: none;
-                 height: 50vh; " >
-
-  
-    <div class="container">
-      <div class="row">
-        <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="500ms">
-           <h2 style=" font-family: 'Ubuntu'; " >OBJECTIFS DU PROJET</h2>
-          <p>Cette section est résever aux objectifs de votre projets, vous pouvez insérer autant de text souhaité</p>
-        </div>
-      </div> 
-    </div>
-    <br>
-    <br>
-
-  </section>
-
-  <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">
+<div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">
 <hr  style=" width: 70%;
             height: 1px;
             margin-left: auto;
@@ -217,12 +191,12 @@
 </div>
 
 
-<section>
+  <section>
     
     <div class="container">
       <div class="row">
         <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="500ms">
-           <h2 style=" font-family: 'Ubuntu'; " >IMAGES DE PRESENTATION</h2>
+           <h2 style=" font-family: 'Ubuntu'; text-align: center;" >IMAGES DE PRESENTATION</h2>
           <p>Dans cette parties vous êtes libre de mettre des photos de réalisation du projet</p>
         </div>
       </div>
@@ -263,6 +237,51 @@
 
 
 </section>
+
+<div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">
+<hr  style=" width: 70%;
+            height: 1px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #00008b;
+            border: 0 none;
+            opacity: 0.3 " >
+</div>
+
+
+<section style=" width: 100%;
+                 padding: 0 7%;
+                 display: table;
+                 margin: 0;
+                 max-width: none;
+                 height: 50vh; " >
+
+  
+    <div class="container">
+      <div class="row">
+        <div class="heading  wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="500ms">
+           <h2 style=" font-family: 'Ubuntu'; text-align: center;" >OBJECTIFS DU PROJET</h2>
+           <br>
+          <p style=" font-size: 18px; " >Lorem ipsum dolor sit amet, ea tantas luptatum probatus ius. Est inani doctus ne, atqui eloquentiam ne ius, laboramus similique cum ea. At dicat evertitur instructior ius, eirmod conclusionemque cu nam. Mei ne magna expetenda scribentur, sea eu vide apeirian consectetuer. Amet iuvaret mandamus sit cu.
+
+          Duo ne ferri debitis, ex nominavi constituam sea. Ius eius suscipit fabellas ut. Eu est tractatos suavitate, pro ei utinam epicuri similique, sale quodsi ei vix. Et nam debet dicant, discere recusabo ei sit, per decore placerat at. Sint expetenda eloquentiam et pro. Per ad periculis explicari, enim reque per te, semper dolorem vel ea.
+
+          Alterum electram vel ea, eos ut graecis ocurreret. In postea delectus mei. Per ei ferri gloriatur scribentur, doming quaerendum mei eu. Et nisl congue vix. Tacimates salutatus mel at, ne pri mutat tincidunt assueverit.
+
+          Ea graece invenire eos. Ad feugait intellegam pri. His ne quot delenit, eum te causae propriae mandamus. Summo falli perpetua nam id.
+
+          Iudico dissentiet sea an. Te nobis adipisci mei, possit aliquid fierent ei vel. Te duo elit diceret aliquid. At solet aliquid cum. Omnis mentitum mea ei.</p>
+        </div>
+      </div> 
+    </div>
+    <br>
+    <br>
+
+  </section>
+
+  
+
+
 
 <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">
 <hr  style=" width: 70%;

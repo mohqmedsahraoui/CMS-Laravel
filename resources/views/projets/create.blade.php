@@ -1,17 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<style type="text/css">
-    
-</style>
-
-<body>
-    
-
-
-
 
 
 <div class="container" style="margin-top: 150px; display: flex; justify-content: center;" >
@@ -22,7 +11,7 @@
 
         {{ csrf_field() }}
 
-<h1 style="text-align: center;">Information Nécessaire Du Projet</h1>
+    <h1 style="text-align: center;">Information Nécessaire Du Projet</h1>
 
 
     <div class="form-group">
@@ -75,15 +64,10 @@
 
     </div>
 
-    <div>
-          <div class="form-group">
-     </div>
-
-<input type="submit" class="button-success pure-button" style=" background: rgb(28, 184, 65);color: white; margin: 50px auto; display: flex; justify-content: center; border-radius: 12px;" name="présentation" class="form-control btn btn-primary" value=Suivant>
+ 
+              <input type="submit" class="button-success pure-button" style=" background: rgb(28, 184, 65);color: white; margin: 50px auto; display: flex; justify-content: center; border-radius: 12px;" name="présentation" class="form-control btn btn-primary" value=Suivant>
             </div>
-            <!-- 
-            <a class="btn btn-primary" href="{{ url('projet/photo') }}" role="button">Next</a>  --> 
-
+            
         </form>
 
 
@@ -91,11 +75,7 @@
     </div>
 </div>
 
-<footer>
-  <div class="container">
-    <div class="small text-center text-muted">Copyright &copy; 2019 - CDTA</div>
-  </div>
-</footer>
-</body>
+
+
 
 @endsection

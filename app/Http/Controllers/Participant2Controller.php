@@ -100,7 +100,16 @@ class Participant2Controller extends Controller
         return redirect('projets');
 
         }
-            
 
     }
+
+
+
+   
+
+
+
+
+
+
 }

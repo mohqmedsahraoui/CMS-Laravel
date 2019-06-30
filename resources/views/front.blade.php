@@ -68,7 +68,7 @@
           <a class="nav-link" href="#about-us" style=" font-family: 'lato'; " >A Propos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#contact" style=" font-family: 'lato'; " >Contacte</a>
+          <a class="nav-link" href="#contact" style=" font-family: 'lato'; " >Contact</a>
         </li>
       </ul>
     </div>
@@ -87,7 +87,7 @@
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
             @foreach( $getProjetInfos as $photo )
-                <div class="item {{ $loop->first ? ' active' : '' }}" style=" height: 75vh;
+                <div class="item {{ $loop->first ? ' active' : '' }}" style=" height: 80vh;
                                                                               min-height: 350px;
                                                                               background: no-repeat center center scroll;
                                                                               -webkit-background-size: cover;
@@ -95,14 +95,14 @@
                                                                               -o-background-size: cover;
                                                                               background-size: cover; " >
 
-                <img class="d-block w-100" src="/images/carousel/{{$photo->carousel}}" style="-webkit-filter: brightness(30%);" >
+                <img class="d-block w-100"  src="/images/carousel/{{$photo->carousel}}" style="-webkit-filter: brightness(30%);" >
                 
                 <div class="carousel-caption d-none d-md-block">
                   <div class="fixed-top">
                     <h3 class="display-3 text-white" style="  margin-top: 260px;">{{$photo->titre}}</h3>
                    </div>
                    <div class="fixed-top">
-                    <p class="display-6 text-white" style=" margin-top: 355px;">{{$photo->intro}}</p>
+                    <p class="display-6 text-white" style=" margin-top: 355px;">Centre de Développement des Technologies Avancées (CDTA) </p>
                    </div>
                    
                    <a class="btn btn-light btn-xl js-scroll-trigger" href=" #description ">Voir la Description</a>
@@ -183,6 +183,8 @@
   </section>
 
   <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">
+
+
 <hr  style=" width: 70%;
             height: 1px;
             margin-left: auto;
@@ -192,40 +194,6 @@
             margin-top: 20px;
             opacity: 0.3 " >
 </div>
-  
-
-
-<section style=" width: 100%;
-                 padding: 0 7%;
-                 display: table;
-                 margin: 0;
-                 max-width: none;
-                 height: 50vh; " >
-
-  
-    <div class="container">
-      <div class="row">
-        <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="500ms">
-           <h2 style=" font-family: 'Ubuntu'; " >OBJECTIFS DU PROJET</h2>
-          <p>{{$getProjet->objectif}}</p>
-        </div>
-      </div> 
-    </div>
-    <br>
-    <br>
-
-  </section>
-
-  <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">
-<hr  style=" width: 70%;
-            height: 1px;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: #00008b;
-            border: 0 none;
-            opacity: 0.3 " >
-</div>
-
 
 <section>
     
@@ -249,7 +217,7 @@
         <div class="carousel-inner" role="listbox"  >
           <!-- Slide One - Set the background image for this slide in the line below -->
             @foreach( $getProjetPresentation as $photo )
-                <div class="item {{ $loop->first ? ' active' : '' }}" style=" height: 65vh;
+                <div class="item {{ $loop->first ? ' active' : '' }}" style=" height: 85vh;
                                                                               min-height: 350px;
                                                                               background: no-repeat center center scroll;
                                                                               -webkit-background-size: cover;
@@ -278,6 +246,34 @@
 
 
 </section>
+
+  
+
+
+<section style=" width: 100%;
+                 padding: 0 7%;
+                 display: table;
+                 margin: 0;
+                 max-width: none;
+                 height: 50vh; " >
+
+  
+    <div class="container">
+      <div class="row">
+        <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="500ms">
+           <h2 style=" font-family: 'Ubuntu'; " >OBJECTIFS DU PROJET</h2>
+          <p>{{$getProjet->objectif}}</p>
+        </div>
+      </div> 
+    </div>
+    <br>
+    <br>
+
+  </section>
+
+  
+
+
 
 <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">
 <hr  style=" width: 70%;
@@ -316,9 +312,11 @@
           <div class="col-sm-3">
             <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
               <div class="member-info">
-                <h3>{{$superviseurs->Nom}}</h3>
+                <h3>{{$superviseurs->Name}}</h3>
                 <h4>{{$superviseurs->Role}}</h4>
-                <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+                <h4>Participants</h4>    
+                <p>.</p>
+                
               </div>  
             </div>
           </div>
@@ -439,7 +437,6 @@
             </div>
             <div class="col-sm-6">
               <div class="contact-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
                 <ul class="address">
                   <li><i class="fa fa-map-marker"></i> <span> Address:</span> Cité 20 août 1956 Baba Hassen, Alger, Algérie</li>
                   <li><i class="fa fa-phone"></i> <span> Phone:</span> +213 (0) 23 35 22 60 /61 /64 /68 /69  </li>

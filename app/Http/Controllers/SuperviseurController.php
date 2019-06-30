@@ -24,7 +24,7 @@ class SuperviseurController extends Controller
        for($i=0 ; $i < $value; $i++){
         /* INSERSION D UN SUPERVISEUR A CHAQUE TOUR DE BOUCLE*/
         DB::table('superviseurs')->insert(
-            ['Nom' => $request->Input('Nom'.$i), 'Role' => $request->Input('Role'.$i), 'projet_id' => $request->Input('projet_id')]
+            ['Name' => $request->Input('Nom'.$i), 'Role' => $request->Input('Role'.$i), 'projet_id' => $request->Input('projet_id')]
         );
         /*RECUPERATION DE L ID DU DERNIER SUPERVISEUR CRéé */
 
@@ -80,5 +80,9 @@ class SuperviseurController extends Controller
        return view('projets.participants', ['participants1' => $participants1,'participants2' => $participants2, 'participants3' => $participants3, 'participants4' => $participants4, 'participants5' => $participants5, 'superviseurid1' => $superviseurid1, 'superviseurid2' => $superviseurid2, 'superviseurid3' => $superviseurid3, 'superviseurid4' => $superviseurid4, 'superviseurid5' => $superviseurid5, 'projet_id' => $projet_id]);
    }  
 
+
+    
+
     }
+
 }

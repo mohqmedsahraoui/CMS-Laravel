@@ -15,7 +15,7 @@ class CreateSuperviseursTable extends Migration
     {
         Schema::create('superviseurs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('Nom', 200)->nullable();
+            $table->string('Name', 200)->nullable();
             $table->text('Role')->nullable();
             $table->timestamps();
         });

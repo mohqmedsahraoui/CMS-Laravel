@@ -78,6 +78,10 @@ class ProjetController extends Controller
 
         $projet->titre = $request->input('titre');
         $projet->description= $request->input('description');
+        $projet->intro= $request->input('intro');
+        $projet->objectif= $request->input('objectif');
+
+
         $projet->save();
 
         return redirect('projets');
@@ -107,6 +111,9 @@ class ProjetController extends Controller
             $getSup = DB::table('projets')->where('projets.id', \request('idprojet'))
                         ->join('superviseurs', 'projets.id', '=', 'superviseurs.projet_id')
                         ->get();
+
+          
+
 
             $getProjet = DB::table('projets')->where('id', \request('idprojet'))->first();
 
