@@ -112,12 +112,14 @@ class ProjetController extends Controller
                         ->join('superviseurs', 'projets.id', '=', 'superviseurs.projet_id')
                         ->get();
 
+            $getParticipants = DB::table('participants')->where('superviseurs.projet_id',  \request('idprojet'))
+                                    ->join('superviseurs', 'participants.superviseur_id', '=', 'superviseurs.id')
+                                    ->select('participants.*')
+                                    ->get();
           
-
-
             $getProjet = DB::table('projets')->where('id', \request('idprojet'))->first();
 
-            return view('front', ['getProjet' => $getProjet, 'getProjetInfos' => $getProjetInfos],['getProjet' => $getProjet, 'getSup' => $getSup, 'getProjetPresentation' => $getProjetPresentation ] );
+            return view('front', ['getProjet' => $getProjet, 'getProjetInfos' => $getProjetInfos],['getProjet' => $getProjet, 'getSup' => $getSup, 'getProjetPresentation' => $getProjetPresentation, 'getParticipants' => $getParticipants ] );
 
            
         }

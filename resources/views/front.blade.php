@@ -315,8 +315,11 @@
                 <h3>{{$superviseurs->Name}}</h3>
                 <h4>{{$superviseurs->Role}}</h4>
                 <h4>Participants</h4>    
-                <p>.</p>
-                
+                @foreach($getParticipants as $particip)
+                @if($particip->superviseur_id == $Superviseurs->id)
+                <p>{{$particip->Nom}}</p>
+                @endif
+                @endforeach
               </div>  
             </div>
           </div>
