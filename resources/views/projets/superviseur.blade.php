@@ -27,7 +27,7 @@
   <div class="row justify-content-center">
         <div class="col-md-8">
          <h3 style="text-align: center;">Ajoutez le(s) superviseur(s) du projet</h3>
-            <div class="card" style="padding: 50px; width:80vh; display:flex; justify-content:center; margin:30px auto;">
+            <div class="card" style="padding: 80px; width:80vh; display:flex; justify-content:center; margin:30px auto;">
         
             <form method="post" action="{{url('superviseur/store?value='.$getValue)}}" enctype="multipart/form-data">
 {{ csrf_field() }}
@@ -42,6 +42,7 @@
   <div class="col-md-10">
       <select class="custom-select" name="Role{{$i}}">
           <option value="">Selectionnez un role existant</option>
+          <option value="Directeur de recherche">Directeur de recherche</option>
           <option value="Maitre de recherche A">Maitre de recherche A</option>
           <option value="Maitre de recherche B">Maitre de recherche B</option>
           <option value="Chargé de recherche">Chargé de recherche</option>
@@ -70,8 +71,8 @@
     <input name="projet_id" hidden="hidden" value="{{ $data6 }}">
 
   
-  <div class="form-group row">
-      <div class="col-sm-10" style="justify-content: center;">
+  <div class="form-group row" style="margin: 50px auto; display:flex; justify-content: center;">
+      <div class="col-sm-10">
         <button type="submit" class="btn btn-success">Suivant</button>
       </div>
     </div>

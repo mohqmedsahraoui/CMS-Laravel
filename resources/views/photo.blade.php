@@ -115,21 +115,21 @@
   <div id="carouselExampleControls" data-interval="500"class="carousel slide" data-ride="carousel" style="width:65%; margin:50px auto;">
   <div class="carousel-inner" >
     <div class="carousel-item active" >
-      <img class="d-block w-100" src="/images/design/1.jpg" style="height:55vh;" alt="First slide">
+      <img class="d-block w-100" src="/images/1.jpg" style="height:55vh;" alt="First slide">
       <div class="carousel-caption d-none d-md-block">
         <h2>Titre Du Projet</h2>
         <p style="color: white;" >Presentation</p>
       </div>
     </div>
     <div class="carousel-item"  >
-      <img class="d-block w-100" src="/images/design/2.jpg" style="height:55vh;" alt="First slide">
+      <img class="d-block w-100" src="/images/2.jpg" style="height:55vh;" alt="First slide">
       <div class="carousel-caption d-none d-md-block">
         <h2 style="  " >Titre Du Projet</h2>
         <p style="color: white;" >Presentation</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="/images/design/3.jpg" style="height:55vh;" alt="First slide">
+      <img class="d-block w-100" src="/images/3.jpg" style="height:55vh;" alt="First slide">
       <div class="carousel-caption d-none d-md-block">
         <h2>Titre Du Projet</h2>
         <p style="color: white;" >Presentation</p>

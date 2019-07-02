@@ -100,7 +100,7 @@
                     <a href="{{url('projets/' .$projet->id.'/edit')}}" class='btn btn-default'>Editer</a>
 
 
-                    <a id="fares" data-value='{{$projet->id}}' style="background-color: black; border-radius: 25px;"type="submit" class='btn btn-danger fares'>Supprimer</a>
+                    <a id="fares" data-value='{{$projet->id}}' style="color:white; border-radius: 25px;" type="submit" class='btn btn-danger fares'>Supprimer</a>
 
                    
 
